@@ -20,7 +20,7 @@ const AdminPromotion = () => {
                   <button class="btn btn-success">Create Promotions</button>
                 </Link>
               </div>
-              <div class="col-3">
+              <div class="col-2">
                 <Link to="/admin/promotion/:promotionId" exact={true}>
                   <button class="btn btn-success">Update Promotions</button>
                 </Link>
