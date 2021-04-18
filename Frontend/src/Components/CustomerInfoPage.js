@@ -16,7 +16,7 @@ const CustomerInfoPage = () => {
     return(
         <div className="background">
             <Container>
-                <Row className="justify-content-md-center">
+                <Row className="justify-content-md-center info-box">
                     <Col xs lg="5" className="left-column">
                         <div id="border-image">
                           <Image id="customer-picture" src={Github} height="200px" width="200px" roundedCircle/>
