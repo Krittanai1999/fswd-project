@@ -3,26 +3,26 @@ import logo from "./img/logo.png";
 import cart from "./img/shopping-cart.png";
 import user from "./img/user.png";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  NavLink,
-} from "react-router-dom";
-import Swiper from "react-id-swiper";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link,
+//   NavLink,
+// } from "react-router-dom";
+// import Swiper from "react-id-swiper";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "swiper/swiper-bundle.css";
 
-import Home from "./components/Home/Home";
-import Footer from "./components/Footer/Footer";
-import Login from "./components/Login";
-import Register from "./components/Register";
+// import Home from "./Components/Home/Home";
+// import Footer from "./Components/Footer/Footer";
+// import Login from "./Components/Login";
+// import Register from "./Components/Register";
 
-import Navigation from "./components/Navigation";
+// import Navigation from "./Components/Navigation";
 
 function App() {
   return (

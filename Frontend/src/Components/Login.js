@@ -4,6 +4,7 @@ import App from "../App";
 const Login = () => {
   return (
     <>
+      <App/>
       <div>Login</div>
     </>
   );
