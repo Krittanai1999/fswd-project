@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import CustomerInfoPage from './CustomerInfoPage';
+import CustomerOrdersPage from './CustomerOrdersPage';
 import reportWebVitals from './reportWebVitals';
+import CustomerOrderDetailPage from './CustomerOrderDetailPage'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CustomerInfoPage />
   </React.StrictMode>,
   document.getElementById('root')
 );
