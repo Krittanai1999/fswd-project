@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+// import App from "./App";
 // import CustomerInfoPage from './CustomerInfoPage';
 // import CustomerOrdersPage from './CustomerOrdersPage';
 import reportWebVitals from "./reportWebVitals";
-import Navigation from "./components/Navigation";
+import Navigation from "./Components/Navigation";
 import { BrowserRouter as Router } from "react-router-dom";
 // import CustomerOrderDetailPage from './CustomerOrderDetailPage'
 
