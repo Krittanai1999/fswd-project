@@ -1,0 +1,29 @@
+#wrapper {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  color: #dddbf1;
+  padding: 10px 7vw 10px 7vw;
+  font-size: 25px;
+}
+
+.sidenav a {
+  padding: 24px 4vw 24px 4vw;
+  text-decoration: none;
+  font-size: 18px;
+  color: #dddbf1;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #383f51;
+}
+
+.bg-blue {
+  background: #383f51;
+}
