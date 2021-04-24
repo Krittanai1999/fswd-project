@@ -1,28 +1,13 @@
+// MAIN NAVBAR
 import React from "react";
 import logo from "./img/logo.png";
 import cart from "./img/shopping-cart.png";
 import user from "./img/user.png";
 
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link,
-//   NavLink,
-// } from "react-router-dom";
-// import Swiper from "react-id-swiper";
-
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "swiper/swiper-bundle.css";
-
-// import Home from "./Components/Home/Home";
-// import Footer from "./Components/Footer/Footer";
-// import Login from "./Components/Login";
-// import Register from "./Components/Register";
-
-// import Navigation from "./Components/Navigation";
 
 function App() {
   return (
@@ -73,34 +58,19 @@ function App() {
         <div className="header-menu">
           <ul className="header-menu-container">
             <a href="/" className="catagory-menu">
-              <li>New</li>
+              <li>Living Room</li>
             </a>
             <a href="/" className="catagory-menu">
-              <li>Sofas</li>
+              <li>Bathroom</li>
             </a>
             <a href="/" className="catagory-menu">
-              <li>Chairs</li>
+              <li>Bedroom</li>
             </a>
             <a href="/" className="catagory-menu">
-              <li>Tables</li>
+              <li>Kitchen</li>
             </a>
             <a href="/" className="catagory-menu">
-              <li>Beds</li>
-            </a>
-            <a href="/" className="catagory-menu">
-              <li>Wardrobes</li>
-            </a>
-            <a href="/" className="catagory-menu">
-              <li>Drawer & Shelf</li>
-            </a>
-            <a href="/" className="catagory-menu">
-              <li>Lighting</li>
-            </a>
-            <a href="/" className="catagory-menu">
-              <li>Garden</li>
-            </a>
-            <a href="/" className="catagory-menu">
-              <li>Children's furniture</li>
+              <li>Other</li>
             </a>
           </ul>
         </div>

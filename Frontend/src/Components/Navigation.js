@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import AdminDashboard from "./AdminDashboard";
 import AdminProducts from "./Products/AdminProducts";
 import AdminCreateProducts from "./Products/AdminCreateProducts";
@@ -9,20 +10,26 @@ import AdminCreatePromotion from "./Promotions/AdminCreatePromotion";
 import AdminUpdatePromotion from "./Promotions/AdminUpdatePromotion";
 import AdminOrders from "./Orders/AdminOrders";
 import AdminOrdersDetail from "./Orders/AdminOrderDetail";
+
 import Home from "./Home/Home";
 import Login from "./Login";
 import Register from "./Register";
+import CustomerInfoPage from "./Customer/CustomerInfoPage"; 
 import { Route, Switch } from "react-router-dom";
+
 
 const Navigation = () => {
   return (
     <React.Fragment>
       <Switch>
         <Route path="/" exact={true} component={Home} />
-        <Route path="/admin" exact={true} component={AdminDashboard} />
         <Route path="/register" exact={true} component={Register} />
+        <Route path="/login" exact={true} component={Login} />
+        <Route path="/customer" exact={true} component={CustomerInfoPage} />
+
         <Route path="/admin" exact={true} component={AdminDashboard} />
         <Route path="/admin/products" exact={true} component={AdminProducts} />
+        
         <Route
           path="/admin/products/create"
           exact={true}

@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
-import './CustomerOrderStyle.css';
+import '../../styles/CustomerOrderStyle.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Image, Button, Row, Col, Table} from 'react-bootstrap'
 import WebFont from 'webfontloader';
 
-const CustomerOrderDetailPage = () => {
+const CustomerOrdersPage = () => {
     useEffect(() => {
         WebFont.load({
           google: {
@@ -16,31 +16,28 @@ const CustomerOrderDetailPage = () => {
         <div className="background">
             <Container>
                 <div id="header">
-                    <h2>Order Detail</h2>
+                    <h2>Orders</h2>
+                    <h5>items</h5>
+                    <h5>3</h5>
                 </div>
-                <h5>Order Status</h5>
-                <div id="order-status">
-                    
-                </div>
-                <h5>Order items list</h5>
-                <div id="products-order-list">
-                    <div className="product-order">
+                <div id="order-list">
+                    <div className="order-item">
                         <h6>Order number</h6>
 
                     </div>
-                    <div className="product-order">
+                    <div className="order-item">
                         <h6>Order number</h6>
 
                     </div>
-                    <div className="product-order">
+                    <div className="order-item">
                         <h6>Order number</h6>
 
                     </div>
-                    <div className="product-order">
+                    <div className="order-item">
                         <h6>Order number</h6>
 
                     </div>
-                    <div className="product-order">
+                    <div className="order-item">
                         <h6>Order number</h6>
 
                     </div>
@@ -50,4 +47,4 @@ const CustomerOrderDetailPage = () => {
     )
 }
 
-export default CustomerOrderDetailPage;
+export default CustomerOrdersPage;
