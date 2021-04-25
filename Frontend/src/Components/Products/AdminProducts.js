@@ -104,10 +104,15 @@ const AdminProducts = () => {
           <h2>PRODUCT</h2>
         </nav>
 
-        <div class="d-flex justify-content-start">
-          <Link to="/admin/products/create" exact={true}>
-            <button class="btn btn-success">Create Product</button>
-          </Link>
+        <div style={button}>
+        <Button
+              component={Link}
+              to="/admin/products/create"
+              variant="contained"
+              style={{ backgroundColor: "#8FBC8F" }}
+            >
+              Create Product
+            </Button>
         </div>
 
         <Paper className={classes.paper1}>
@@ -124,5 +129,11 @@ const AdminProducts = () => {
 const context = {
   width: "100%",
 };
+
+const button = {
+  marginLeft: "1%",
+  marginTop: "1%"
+};
+
 
 export default AdminProducts;
