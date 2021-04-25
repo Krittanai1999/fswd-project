@@ -14,6 +14,7 @@ const enumCategoryType = {
 const ProductSchema = new Schema({
   name: { type: String, require: true, index: true  },
   description: { type: String, require: true, index: true  },
+  slug: { type: String, require: true, index: true, unique:true },
   type: {
     type: String,
     require: true,
@@ -21,8 +22,8 @@ const ProductSchema = new Schema({
     index: true,
     default:  enumCategoryType.OTHER
   },
-  quantity: { type: Number, require: true, index: true }, 
-  price: { type: Number, require: true, index: true }, 
+  quantity: { type: String, require: true, index: true },
+  price: { type: String, require: true, index: true }, 
   imageUrl: { type: String, require: true, index: true  },
   tags: { type: Array, require: true, index: true },
   timestamp: { type: Date, default: Date.now },

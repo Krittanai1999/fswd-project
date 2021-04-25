@@ -6,7 +6,7 @@ import Navigation from "./Components/Navigation";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import { CookiesProvider } from 'react-cookie'
-// import { SessionProvider } from './contexts/SessionContext'
+import { SessionProvider } from './contexts/SessionContext'
 
 const client = new ApolloClient({
   uri: 'http://localhost:5001/graphql',
@@ -19,9 +19,9 @@ ReactDOM.render(
     <CookiesProvider>
       <Router>
         <ApolloProvider client={client}>
-          {/* <SessionProvider> */}
+          <SessionProvider>
             <Navigation />
-          {/* </SessionProvider> */}
+          </SessionProvider>
         </ApolloProvider>
       </Router>
     </CookiesProvider>
