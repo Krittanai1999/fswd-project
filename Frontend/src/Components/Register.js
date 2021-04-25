@@ -7,10 +7,6 @@ import { useMutation } from "@apollo/client";
 import { CREATE_USER_MUTATION } from "../graphql/createUserMutation";
 
 const useStyles = makeStyles((s) => ({
-  regisPage: {
-    display: "flex",
-    flexDirection: "column",
-  },
   loginBox: {
     height: "60vh",
     backgroundColor: "#D8BFD8",
@@ -71,7 +67,7 @@ const Register = () => {
     [createUser, history, name, username, password]
   );
   return (
-    <div className={classes.regisPage}>
+    <div>
       <App />
       <div className={classes.loginBox}>
         <div className={classes.titleLogin}>
