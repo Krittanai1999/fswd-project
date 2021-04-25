@@ -37,7 +37,13 @@ const AdminPromotion = () => {
           <CardActionArea>
             <CardContent>
               <Typography gutterBottom variant="h5" component="h3">
-                <span style={{ color: "#383f51", fontWeight: "bold", textDecoration: "underline" }}>
+                <span
+                  style={{
+                    color: "#383f51",
+                    fontWeight: "bold",
+                    textDecoration: "underline",
+                  }}
+                >
                   {promo.discount}% Sale off
                 </span>
               </Typography>
@@ -67,21 +73,20 @@ const AdminPromotion = () => {
           <h2>PROMOTION</h2>
         </nav>
 
+        <div class="d-flex justify-content-start">
+          <Link to="/admin/promotion/create" exact={true}>
+            <button class="btn btn-success">Create Promotions</button>
+          </Link>
+          {/* <Link to="/admin/promotion/:promotionId" exact={true}>
+              <button class="btn btn-success">Update Promotions</button>
+            </Link> */}
+        </div>
+
         <Paper className={classes.paper1}>
-          
           <Grid container spacing={3}>
             {promotionItem()}
           </Grid>
-          <br/>
-          <div class="d-flex justify-content-around">
-            <Link to="/admin/promotion/create" exact={true}>
-              <button class="btn btn-success">Create Promotions</button>
-            </Link>
-
-            <Link to="/admin/promotion/:promotionId" exact={true}>
-              <button class="btn btn-success">Update Promotions</button>
-            </Link>
-          </div>
+          <br />
         </Paper>
       </div>
     </div>
