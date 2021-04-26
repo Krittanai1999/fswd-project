@@ -9,8 +9,10 @@ query{
     productId
     timestamp
     product{
+      _id
       name
       price
+      imageUrl
     }
     total
   }

@@ -1,8 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Sidebar from "../../Sidebar/sidebar";
+import Sidebar from "../../../Sidebar/sidebar";
 
-const AdminUpdateProducts = () => {
+const AdminUpdatePromotion = () => {
   return (
     <>
       <div class="d-flex" id="wrapper">
@@ -10,7 +10,7 @@ const AdminUpdateProducts = () => {
 
         <div id="page-content-wrapper">
           <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <h2>UPDATE PRODUCTS</h2>
+            <h2>UPDATE PROMOTION</h2>
           </nav>
 
           
@@ -28,4 +28,4 @@ const AdminUpdateProducts = () => {
     </>
   );
 };
-export default AdminUpdateProducts;
+export default AdminUpdatePromotion;

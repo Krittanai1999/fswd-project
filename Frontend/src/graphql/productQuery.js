@@ -4,6 +4,7 @@ query{
   products (sort: _ID_DESC){
     _id
     name
+    slug
     description
     type
     quantity

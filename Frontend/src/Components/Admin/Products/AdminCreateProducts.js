@@ -11,9 +11,10 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 
 import { gql, useMutation } from "@apollo/client";
-import { PRODUCT_QUERY } from "../../graphql/productQuery";
+import { PRODUCT_QUERY } from "../../../graphql/productQuery";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Sidebar from "../../Sidebar/sidebar";
+import Sidebar from "../../../Sidebar/sidebar";
+import {useHistory} from "react-router";
 import { Link } from "react-router-dom";
 
 const CREATE_PRODUCT = gql`
@@ -43,7 +44,9 @@ const useStyles = makeStyles((theme) => ({
 
 const AdminCreateProducts = () => {
   const classes = useStyles();
+  const history = useHistory();
   const [name, setName] = useState("");
+  const [slug, setSlug] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [type, setType] = useState("");
@@ -54,6 +57,9 @@ const AdminCreateProducts = () => {
 
   const handleNameChange = useCallback((e) => {
     setName(e.target.value);
+  }, []);
+  const handleSlugChange = useCallback((e) => {
+    setSlug(e.target.value);
   }, []);
   const handleDescriptionChange = useCallback((e) => {
     setDescription(e.target.value);
@@ -77,30 +83,38 @@ const AdminCreateProducts = () => {
   const handleCreateProduct = useCallback(
     async (e) => {
       e.preventDefault();
-      const variables = {
-        record: {
-          createProduct,
-          name,
-          description,
-          price,
-          type,
-          quantity,
-          imageUrl,
-        },
-      };
-      await createProduct({
-        variables,
-        refetchQueries: [{ query: PRODUCT_QUERY }],
-      });
-      setName("");
-      setDescription("");
-      setPrice("");
-      setType("");
-      setQuantity("");
-      setImageUrl("");
-      // setTag("")
+      try {
+        const variables = {
+          record: {
+            createProduct,
+            name,
+            description,
+            price,
+            type,
+            quantity,
+            imageUrl,
+            slug,
+          },
+        };
+        await createProduct({
+          variables,
+          refetchQueries: [{ query: PRODUCT_QUERY }],
+        });
+        setName("");
+        setSlug("");
+        setDescription("");
+        setPrice("");
+        setType("");
+        setQuantity("");
+        setImageUrl("");
+        history.push("/admin/products");
+        alert("New Product Added");
+      } catch (err) {
+        console.log(err);
+        alert("Try Again!");
+      }
     },
-    [createProduct, name, description, price, type, quantity, imageUrl]
+    [createProduct, name, description, price, type, quantity, imageUrl, slug]
   );
 
   return (
@@ -111,7 +125,7 @@ const AdminCreateProducts = () => {
           <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
             <h2>CREATE PRODUCT</h2>
           </nav>
-          <br/>
+          <br />
           <form onSubmit={handleCreateProduct} style={form}>
             <Grid container spacing={3}>
               <Grid item xs={5}>
@@ -148,6 +162,17 @@ const AdminCreateProducts = () => {
                     <MenuItem value={"OTHER"}>Other</MenuItem>
                   </Select>
                 </FormControl>
+              </Grid>
+              <Grid item xs={9}>
+                <TextField
+                  label="Slug"
+                  variant="outlined"
+                  style={{ width: "100%" }}
+                  type="text"
+                  value={slug}
+                  onChange={handleSlugChange}
+                  required
+                />
               </Grid>
               <Grid item xs={9}>
                 <TextField
@@ -236,8 +261,7 @@ const context = {
 };
 
 const form = {
-  marginLeft: "10%"
+  marginLeft: "10%",
 };
-
 
 export default AdminCreateProducts;

@@ -11,11 +11,11 @@ import {
   Grid,
   Paper,
 } from "@material-ui/core";
-import Sidebar from "../../Sidebar/sidebar";
+import Sidebar from "../../../Sidebar/sidebar";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { PRODUCT_QUERY } from "../../graphql/productQuery";
+import { PRODUCT_QUERY } from "../../../graphql/productQuery";
 import { useQuery } from "@apollo/client";
 
 const useStyles = makeStyles((theme) => ({
@@ -28,11 +28,11 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   root2: {
-    maxWidth: 345,
+    maxWidth: 350,
     borderRadius: 0,
   },
   media: {
-    height: 300,
+    height: 500,
   },
   paper1: {
     padding: theme.spacing(2),
@@ -88,9 +88,9 @@ const AdminProducts = () => {
               </Button>
             </Link>
 
-            <Button size="small" variant="outlined" style={{ color: "red" }}>
+            {/* <Button size="small" variant="outlined" style={{ color: "red" }}>
               Delete
-            </Button>
+            </Button> */}
           </CardActions>
         </Card>
       </Grid>

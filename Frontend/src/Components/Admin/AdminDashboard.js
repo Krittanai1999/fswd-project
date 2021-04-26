@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Sidebar from "../Sidebar/sidebar";
+import Sidebar from "../../Sidebar/sidebar";
 
 const AdminDashboard = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Sidebar from "../../Sidebar/sidebar";
+import Sidebar from "../../../Sidebar/sidebar";
 import { Link } from "react-router-dom";
 import {
   Paper,
@@ -12,7 +12,7 @@ import {
   Typography,
   Grid,
 } from "@material-ui/core";
-import { PROMOTION_QUERY } from "../../graphql/promotionQuery";
+import { PROMOTION_QUERY } from "../../../graphql/promotionQuery";
 import { useQuery } from "@apollo/client";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -73,13 +73,15 @@ const AdminPromotion = () => {
           <h2>PROMOTION</h2>
         </nav>
 
-        <div class="d-flex justify-content-start">
-          <Link to="/admin/promotion/create" exact={true}>
-            <button class="btn btn-success">Create Promotions</button>
-          </Link>
-          {/* <Link to="/admin/promotion/:promotionId" exact={true}>
-              <button class="btn btn-success">Update Promotions</button>
-            </Link> */}
+        <div style={button}>
+        <Button
+              component={Link}
+              to="/admin/promotion/create"
+              variant="contained"
+              style={{ backgroundColor: "#8FBC8F" }}
+            >
+              Create Promotion
+            </Button>
         </div>
 
         <Paper className={classes.paper1}>
@@ -95,6 +97,11 @@ const AdminPromotion = () => {
 
 const context = {
   width: "100%",
+};
+
+const button = {
+  marginLeft: "1%",
+  marginTop: "1%"
 };
 
 export default AdminPromotion;
