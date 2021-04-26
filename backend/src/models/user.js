@@ -15,10 +15,14 @@ const UserSchema = new Schema({
     require: true,
     enum: Object.keys(enumUserType),
     index: true,
+    default:  enumUserType.CUSTOMER
   },
   name: { type: String, required: true },
   username: { type: String, required: true, index: true, unique: true },
   password: { type: String, required: true, bcrypt: true },
+  address: { type: String, require: true, default: null },
+  email: { type: String, require: true, default: null },
+  tel: { type: String, require: true, default: null },
 });
 UserSchema.plugin(bcrypt);
 

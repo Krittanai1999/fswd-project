@@ -9,11 +9,11 @@ const StatusType = {
 };
 
 const OrderSchema = new Schema({
-    custumerID: {
+    userID: {
         type: String,
         required: true,
         index: true,
-        ref: "Customer",
+        ref: "User",
     },
     promotionID: {
         type: String,
