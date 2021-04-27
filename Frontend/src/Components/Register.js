@@ -2,12 +2,10 @@ import App from "../App";
 import React, { useCallback, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { TextField, Typography, Button } from "@material-ui/core";
-import { Link as RouterLink } from "react-router-dom";
-import Link from "@material-ui/core/Link";
 import { useHistory } from "react-router";
 import { useMutation } from "@apollo/client";
 import { CREATE_USER_MUTATION } from "../graphql/createUserMutation";
-import { ME_QUERY } from "../graphql/meQuery";
+
 
 const useStyles = makeStyles((s) => ({
   loginBox: {
