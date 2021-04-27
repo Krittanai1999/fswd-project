@@ -6,9 +6,10 @@ const { Schema } = mongoose;
 const PromotionSchema = new Schema({
   name: { type: String, require: true }, 
   amount:{type: String, require:true}, 
-  discount: { type: Number, require: true }, 
+  discount: { type: String, require: true }, 
   productId: {
     type: String,
+    unique : true,
     require: true,
     index: true,
     default: null,
