@@ -1,6 +1,15 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button, Carousel, Col, Container, Row } from "react-bootstrap";
+import {
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+  Grid,
+} from "@material-ui/core";
 import Swiper from "react-id-swiper";
 
 import Footer from "../Footer/Footer";
@@ -8,12 +17,38 @@ import Footer from "../Footer/Footer";
 import "./Home.css";
 
 import arrow from "../../img/right-arrow.png";
-import ex_img from "../../img/product-ex.png";
 import prev from "../../img/previous-arrow.png";
 import next from "../../img/next-arrow.png";
 import App from "../../App";
+import { PRODUCT_QUERY } from "../../graphql/productQuery";
+import { useQuery } from "@apollo/client";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  },
+  root2: {
+    maxWidth: 350,
+    borderRadius: 0,
+  },
+  media: {
+    height: 500,
+  },
+  paper1: {
+    padding: theme.spacing(2),
+    backgroundColor: "#e0dfec",
+  },
+}));
 
 const Home = () => {
+  const { data } = useQuery(PRODUCT_QUERY);
+  const classes = useStyles();
   const params = {
     pagination: {
       el: ".swiper-pagination",
@@ -57,6 +92,44 @@ const Home = () => {
       }
     };
   }, [updateIndex]);
+
+  const productItem = () => {
+    return data?.products?.map((product) => (
+      <Grid item xs={3}>
+        <Card className={classes.root2}>
+          <CardActionArea>
+            <CardMedia
+              className={classes.media}
+              image={product.imageUrl}
+              title="Contemplative Reptile"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h6" component="p">
+                {product.name}
+              </Typography>
+              <Typography style={{ color: "green", fontSize: 19 }}>
+                {parseInt(product.price).toLocaleString("th-TH", {
+                  style: "currency",
+                  currency: "THB",
+                }) ?? ""}
+              </Typography>
+              <Typography
+                variant="body2"
+                color="textPrimary"
+                component="p"
+                noWrap={true}
+              >
+                {product.description}
+              </Typography>
+              {/* <Typography variant="body2" color="textSecondary" component="p">
+                 Tags:{product.tag[0]}
+              </Typography> */}
+            </CardContent>
+          </CardActionArea>
+        </Card>
+      </Grid>
+    ));
+  };
 
   return (
     <div className="page-home">
@@ -125,94 +198,7 @@ const Home = () => {
         {/* New product */}
         <div className="home-new-product">
           <Swiper {...params} ref={swiperRef}>
-            <div className="home-new-product-slide">
-              <div className="home-new-product-box">
-                <div className="home-new-product-img">
-                  <img src={ex_img} alt="right arrow" width="100%" />
-                </div>
-                <div className="home-new-product-detail">
-                  <div className="home-new-product-name">
-                    <h5>Product Name</h5>
-                  </div>
-                  <div className="home-new-product-price">
-                    <h5>12,345 Bath</h5>
-                  </div>
-                </div>
-              </div>
-
-              <div className="home-new-product-box">
-                <div className="home-new-product-img">
-                  <img src={ex_img} alt="right arrow" width="100%" />
-                </div>
-                <div className="home-new-product-detail">
-                  <div className="home-new-product-name">
-                    <h5>Product Name</h5>
-                  </div>
-                  <div className="home-new-product-price">
-                    <h5>12,345 Bath</h5>
-                  </div>
-                </div>
-              </div>
-
-              <div className="home-new-product-box">
-                <div className="home-new-product-img">
-                  <img src={ex_img} alt="right arrow" width="100%" />
-                </div>
-                <div className="home-new-product-detail">
-                  <div className="home-new-product-name">
-                    <h5>Product Name</h5>
-                  </div>
-                  <div className="home-new-product-price">
-                    <h5>12,345 THB</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="slide-2">
-              <div className="home-new-product-slide">
-                <div className="home-new-product-box">
-                  <div className="home-new-product-img">
-                    <img src={ex_img} alt="right arrow" width="100%" />
-                  </div>
-                  <div className="home-new-product-detail">
-                    <div className="home-new-product-name">
-                      <h5>Product Name</h5>
-                    </div>
-                    <div className="home-new-product-price">
-                      <h5>12,345 Bath</h5>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="home-new-product-box">
-                  <div className="home-new-product-img">
-                    <img src={ex_img} alt="right arrow" width="100%" />
-                  </div>
-                  <div className="home-new-product-detail">
-                    <div className="home-new-product-name">
-                      <h5>Product Name</h5>
-                    </div>
-                    <div className="home-new-product-price">
-                      <h5>12,345 Bath</h5>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="home-new-product-box">
-                  <div className="home-new-product-img">
-                    <img src={ex_img} alt="right arrow" width="100%" />
-                  </div>
-                  <div className="home-new-product-detail">
-                    <div className="home-new-product-name">
-                      <h5>Product Name</h5>
-                    </div>
-                    <div className="home-new-product-price">
-                      <h5>12,345 THB</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {productItem()}
           </Swiper>
         </div>
 
