@@ -16,7 +16,8 @@ import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 
 import { PRODUCT_QUERY } from "../../../graphql/productQuery";
-import { useQuery } from "@apollo/client";
+import { DELETE_PRODUCT_MUTATION } from "../../../graphql/deleteProduct";
+import { useQuery, useMutation } from "@apollo/client";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,6 +44,19 @@ const useStyles = makeStyles((theme) => ({
 const AdminProducts = () => {
   const classes = useStyles();
   const { data } = useQuery(PRODUCT_QUERY);
+  const [deleteProduct] = useMutation(DELETE_PRODUCT_MUTATION);
+  const removeProduct = async (id) => {
+    try {
+      await deleteProduct({
+        variables: { id },
+        refetchQueries: [{ query: PRODUCT_QUERY }],
+      });
+      alert("Product Deleted");
+    } catch (err) {
+      console.log(err);
+      alert("Try Again!");
+    }
+  };
 
   const productItem = () => {
     return data?.products?.map((product) => (
@@ -78,7 +92,12 @@ const AdminProducts = () => {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Link to="/admin/products/:productID" exact={true}>
+            <Link
+              to={{
+                pathname: `/admin/product/${product.slug}`,
+              }}
+              style={{ textDecoration: "none" }}
+            >
               <Button
                 size="large"
                 variant="outlined"
@@ -88,9 +107,14 @@ const AdminProducts = () => {
               </Button>
             </Link>
 
-            {/* <Button size="small" variant="outlined" style={{ color: "red" }}>
+            <Button
+              size="small"
+              variant="outlined"
+              style={{ color: "red" }}
+              onClick={() => removeProduct(product._id)}
+            >
               Delete
-            </Button> */}
+            </Button>
           </CardActions>
         </Card>
       </Grid>
@@ -105,14 +129,14 @@ const AdminProducts = () => {
         </nav>
 
         <div style={button}>
-        <Button
-              component={Link}
-              to="/admin/products/create"
-              variant="contained"
-              style={{ backgroundColor: "#8FBC8F" }}
-            >
-              Create Product
-            </Button>
+          <Button
+            component={Link}
+            to="/admin/products/create"
+            variant="contained"
+            style={{ backgroundColor: "#8FBC8F" }}
+          >
+            Create Product
+          </Button>
         </div>
 
         <Paper className={classes.paper1}>
@@ -132,8 +156,7 @@ const context = {
 
 const button = {
   marginLeft: "1%",
-  marginTop: "1%"
+  marginTop: "1%",
 };
-
 
 export default AdminProducts;

@@ -13,7 +13,8 @@ import {
   Grid,
 } from "@material-ui/core";
 import { PROMOTION_QUERY } from "../../../graphql/promotionQuery";
-import { useQuery } from "@apollo/client";
+import { DELETE_PROMOTION_MUTATION } from "../../../graphql/deletePromotion";
+import { useQuery, useMutation } from "@apollo/client";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -29,6 +30,19 @@ const useStyles = makeStyles((theme) => ({
 const AdminPromotion = () => {
   const classes = useStyles();
   const { data } = useQuery(PROMOTION_QUERY);
+  const [deletePromotion] = useMutation(DELETE_PROMOTION_MUTATION);
+  const removePromotion = async (id) => {
+    try {
+      await deletePromotion({
+        variables: { id },
+        refetchQueries: [{ query: PROMOTION_QUERY }],
+      });
+      alert("Promotion Deleted");
+    } catch (err) {
+      console.log(err);
+      alert("Try Again!");
+    }
+  };
 
   const promotionItem = () => {
     return data?.promotions?.map((promo) => (
@@ -58,7 +72,18 @@ const AdminPromotion = () => {
           </CardActionArea>
           <CardActions>
             <Button size="small" color="secondary" variant="contained">
-              Active: {promo.amount}
+              Amount: {promo.amount}
+            </Button>
+            <Button size="small" color="primary" variant="contained">
+              Edit
+            </Button>
+            <Button
+              size="small"
+              variant="outlined"
+              style={{ color: "red" }}
+              onClick={() => removePromotion(promo._id)}
+            >
+              Delete
             </Button>
           </CardActions>
         </Card>
@@ -74,14 +99,14 @@ const AdminPromotion = () => {
         </nav>
 
         <div style={button}>
-        <Button
-              component={Link}
-              to="/admin/promotion/create"
-              variant="contained"
-              style={{ backgroundColor: "#8FBC8F" }}
-            >
-              Create Promotion
-            </Button>
+          <Button
+            component={Link}
+            to="/admin/promotion/create"
+            variant="contained"
+            style={{ backgroundColor: "#8FBC8F" }}
+          >
+            Create Promotion
+          </Button>
         </div>
 
         <Paper className={classes.paper1}>
@@ -101,7 +126,7 @@ const context = {
 
 const button = {
   marginLeft: "1%",
-  marginTop: "1%"
+  marginTop: "1%",
 };
 
 export default AdminPromotion;
