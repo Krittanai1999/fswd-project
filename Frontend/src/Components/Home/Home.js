@@ -8,6 +8,10 @@ import {
     Row
 } from 'react-bootstrap';
 import Swiper from 'react-id-swiper';
+import { 
+    IoIosArrowBack,
+    IoIosArrowForward
+} from 'react-icons/io';
 
 import Footer from '../Footer/Footer';
 
@@ -15,8 +19,6 @@ import './Home.css';
 
 import arrow from '../../img/right-arrow.png';
 import ex_img from '../../img/product-ex.png';
-import prev from '../../img/previous-arrow.png';
-import next from '../../img/next-arrow.png';
 
 const Home = () => {
     const params = {
@@ -252,10 +254,10 @@ const Home = () => {
                 <Row>
                     <Col xs sm={12} className="home-lastest-product-arrow">
                         <Button variant="light" onClick={goPrev}>
-                            <img src={prev} width="40vmin" />
+                            <IoIosArrowBack />
                         </Button>
                         <Button variant="light" onClick={goNext}>
-                            <img src={next} width="40vmin" />
+                            <IoIosArrowForward />
                         </Button>
                     </Col>
                 </Row>

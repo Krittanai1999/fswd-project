@@ -1,7 +1,5 @@
 import React from "react";
 import logo from './img/logo.png';
-import cart from './img/shopping-cart.png';
-import user from './img/user.png';
 
 import {
     BrowserRouter as Router,
@@ -10,7 +8,12 @@ import {
     Link,
     NavLink
 } from "react-router-dom";
-import Swiper from 'react-id-swiper';
+import {
+    FaRegUser
+} from 'react-icons/fa';
+import {
+    IoCartOutline
+} from 'react-icons/io5';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,9 +21,61 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'swiper/swiper-bundle.css';
 
 import Home from './Components/Home/Home';
-import Footer from './Components/Footer/Footer';
 import Login from './Components/Login';
 import Register from './Components/Register';
+
+const catagoryMenu = [
+    {
+        id: 1,
+        name: "New",
+        path: ""
+    },
+    {
+        id: 2,
+        name: "Sofas",
+        path: ""
+    },
+    {
+        id: 3,
+        name: "Chairs",
+        path: ""
+    },
+    {
+        id: 4,
+        name: "Table",
+        path: ""
+    },
+    {
+        id: 5,
+        name: "Beds",
+        path: ""
+    },
+    {
+        id: 6,
+        name: "Wardrobes",
+        path: ""
+    },
+    {
+        id: 7,
+        name: "Drawer & Shelf",
+        path: ""
+    },
+    {
+        id: 8,
+        name: "Lighting",
+        path: ""
+    },
+    {
+        id: 9,
+        name: "Garden",
+        path: ""
+    },
+    {
+        id: 10,
+        name: "Children's furniture",
+        path: ""
+    },
+];
 
 function App() {
     return (
@@ -29,11 +84,11 @@ function App() {
                 <nav className="Navbar-nav">
                     <div className="header-top">
                         <div className="header-top-container">
-                            <Link to="/" className="logo-box">
-                                <div className="logo-img">
+                            <div className="logo-box">
+                                <Link to="/" className="logo-img">
                                     <img src={logo} alt="" height="100%" />
-                                </div>
-                            </Link>
+                                </Link>
+                            </div>
 
                             <div className="search-box">
                                 <div className="search-field">
@@ -43,10 +98,10 @@ function App() {
 
                             <div className="header-icon-box">
                                 <Link to="/" title="shopping cart" className="header-shopping-cart-box">
-                                    <img src={cart} alt="" height="100%" />
+                                    <IoCartOutline />
                                 </Link>
                                 <div className="header-user-icon">
-                                    <img src={user} alt="" height="90%" />
+                                    <FaRegUser />
                                 </div>
                                 <div className="header-user-login">
                                     <Link to="/login" className="user-list">
@@ -63,36 +118,13 @@ function App() {
 
                     <div className="header-menu">
                         <ul className="header-menu-container">
-                            <Link to="/" className="catagory-menu">
-                                <li>New</li>
-                            </Link>
-                            <Link to="/" className="catagory-menu">
-                                <li>Sofas</li>
-                            </Link>
-                            <Link to="/" className="catagory-menu">
-                                <li>Chairs</li>
-                            </Link>
-                            <Link to="/" className="catagory-menu">
-                                <li>Tables</li>
-                            </Link>
-                            <Link to="/" className="catagory-menu">
-                                <li>Beds</li>
-                            </Link>
-                            <Link to="/" className="catagory-menu">
-                                <li>Wardrobes</li>
-                            </Link>
-                            <Link to="/" className="catagory-menu">
-                                <li>Drawer & Shelf</li>
-                            </Link>
-                            <Link to="/" className="catagory-menu">
-                                <li>Lighting</li>
-                            </Link>
-                            <Link to="/" className="catagory-menu">
-                                <li>Garden</li>
-                            </Link>
-                            <Link to="/" className="catagory-menu">
-                                <li>Children's furniture</li>
-                            </Link>
+                            {catagoryMenu.map(menu => {
+                                return (
+                                    <Link to={'/' + menu.path} className="catagory-menu">
+                                        <li>{menu.name}</li>
+                                    </Link>
+                                )
+                            })}
                         </ul>
                     </div>
                 </nav>
@@ -108,7 +140,7 @@ function App() {
                         <Home />
                     </Route>
                 </Switch>
-                
+
             </Router>
         </>
     );

@@ -8,6 +8,8 @@
     --boarder-color: #C4C4C4;
     --text-color-primary: #383F51;
     --text-color-secondary: #3C4F76;
+    --input-bg: #E4E4E4;
+    --input-text: #B8A7A7;
 }
 
 body {
@@ -105,18 +107,28 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    height: 4vmin;
+    /* height: 4vmin; */
     flex: 3;
+    color: var(--text-color-primary);
 }
 
 .header-shopping-cart-box {
-    padding: 0 1.3vmax;
+    padding: 0 1.5vmax;
     height: 100%;
+    font-size: 4vmin;
+    color: var(--text-color-primary);
+    text-decoration: none;
+}
+
+.header-shopping-cart-box:hover {
+    text-decoration: none;
+    color: var(--text-color-secondary);
 }
 
 .header-user-icon {
     padding: 0.1vmax 0.5vmax;
     height: 100%;
+    font-size: 3vmin;
 }
 
 .header-user-login {
