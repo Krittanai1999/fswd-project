@@ -20,9 +20,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import 'swiper/swiper-bundle.css';
 
-import Home from './Components/Home/Home';
-import Login from './Components/Login';
-import Register from './Components/Register';
+import Home from './Pages/Home/Home';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
 
 const catagoryMenu = [
     {

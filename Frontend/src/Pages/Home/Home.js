@@ -12,12 +12,14 @@ import {
     IoIosArrowBack,
     IoIosArrowForward
 } from 'react-icons/io';
+import {
+    RiArrowRightLine
+} from 'react-icons/ri';
 
-import Footer from '../Footer/Footer';
+import Footer from '../../Components/Footer/Footer';
 
 import './Home.css';
 
-import arrow from '../../img/right-arrow.png';
 import ex_img from '../../img/product-ex.png';
 
 const Home = () => {
@@ -119,16 +121,12 @@ const Home = () => {
                         <h3>Lastest Products</h3>
                     </Col>
                     <Col xs={12} md={4} className="home-discover">
-                        <div className="home-discover-box">
+                        <Link to="/" className="home-discover-box">
                             <h5>Discover more</h5>
-                            <div className="discover-arrow-img">
-                                <img
-                                    src={arrow}
-                                    alt="right arrow"
-                                    width="100%"
-                                />
+                            <div className="discover-arrow">
+                                <RiArrowRightLine />
                             </div>
-                        </div>
+                        </Link>
                     </Col>
                 </Row>
 
