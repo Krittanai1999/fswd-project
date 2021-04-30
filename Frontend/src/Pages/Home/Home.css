@@ -11,8 +11,6 @@
 
 /* Discover head */
 
-
-
 .home-discover {
     display: flex;
     justify-content: flex-end;
@@ -35,15 +33,39 @@
     transform: scale(1.2);
 }
 
-.home-discover h5 {
+.home-discover-box {
+    margin-top: 2vmin;
+}
+
+.home-discover-box h5 {
     margin: 0;
     padding: 0;
-    font-size: 2.5vmin;
+    font-size: 1.7vmax;
 }
 
 .discover-arrow {
     font-size: 2.5vmin;
     margin: 0 1vmin;
+}
+
+/* Button */
+.slide-btn-box {
+    padding: 2vmin 0;
+}
+
+.slide-btn {
+    background-color: var(--bg-mocha);
+    border: none;
+    width: 3vmax;
+    height: 3vmax;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    outline: 0;
+    font-size: 1.2vmax;
+    padding: 0.5vmax;
+    margin-right: 1vmax ;
+    color: #353030;
 }
 
 /* Promotion */
@@ -59,12 +81,12 @@
 
 .home-promotion-head h5 {
     margin: 0;
-    font-size: 5vmin;
+    font-size: 4vmin;
 }
 
 .home-promotion-product {
     width: 100%;
-    margin-top: 3vmin;
+    margin-top: 2vmin;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -100,28 +122,10 @@
     transform: scale(1.1);
 }
 
-/* Button */
-.slide-btn-box {
-    padding: 2vmin 0;
-}
-.slide-btn {
-    background-color: var(--bg-mocha);
-    border: none;
-    width: 3vmax;
-    height: 3vmax;
-    border-radius: 50%;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.2vmax;
-    padding: 0.5vmax;
-    margin-right: 1vmax ;
-    color: #353030;
-}
-
-/* product */
 .home-promotion-inner {
     overflow-x: scroll;
     overflow-y: hidden;
+    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -133,15 +137,16 @@
 
 .home-promotion-box {
     width: 20vmax;
-    padding: 1vmin;
+    padding: 2vmin 1vmin;
     display: inline-block;
 }
 
 .home-promotion-detail {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: center;
+    padding: 1vmin 0;
 }
 
 .home-promotion-name {
@@ -149,76 +154,86 @@
 }
 
 .home-promotion-name h5 {
-    font-size: 1.3vmax;
+    font-size: 1.7vmax;
+    margin: 0;
 }
 
 .home-promotion-price h5 {
     font-size: 1.3vmax;
     font-weight: bold;
+    margin: 0;
 }
 
-/* lastest product */
+span.old-price {
+    text-decoration: line-through;
+}
 
-.home-lastest-product {
+span.new-price {
+    font-size: 1.6vmax;
+    color: #ff0000;
+}
+
+
+/* newest product */
+
+.home-newest-product {
     color: var(--text-color-primary);
 }
 
-.home-lastest-product-head {
-    padding: 0 5vmin;
-}
-
-.home-lastest-product-head h3 {
-    margin: 0;
-    font-size: 4vmin;
-}
-
-.home-lastest-product-arrow {
+.home-newest-product-head {
+    padding: 2vmin 5vmin;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
-    padding: 2vmin 0;
 }
 
-.home-lastest-product-arrow button {
-    margin: 0 1vmin;
+.home-newest-product-head h3 {
+    margin: 0;
+    font-size: 5vmin;
 }
 
-.home-new-product {
+.home-newest-product-btn {
+    padding: 2vmin 2vmin;
+    text-align: right;
+}
+
+.home-newest-inner {
     width: auto;
-    margin: 3vmin 0;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
-.home-new-product-slide {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+.home-newest-box {
+    width: 28vmax;
+    padding: 1vmin 2vmin;
+    display: inline-block;
 }
 
-.home-new-product-box {
-    width: 25%;
-    padding: 0 2vmax;
-}
-
-.home-new-product-detail {
+.home-newest-detail {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding: 2vmin 0;
 }
 
-.home-new-product-name {
-    margin: 1vmax 0;
+.home-newest-name {
+    margin: 0.5vmax 0;
 }
 
-.home-new-product-name h5 {
-    font-size: 1.3vmax;
+.home-newest-name h5 {
+    font-size: 1.5vmax;
+    margin: 0;
 }
 
-.home-new-product-price h5 {
-    font-size: 1.3vmax;
+.home-newest-price h5 {
+    font-size: 1.5vmax;
     font-weight: bold;
+    margin: 0;
 }
 
 @media screen and (max-width: 767px) {
@@ -240,9 +255,8 @@
         width: 30vmin;
     }
 
-    .home-new-product-box {
-        width: 50%;
-        padding: 0 2vmax;
+    .home-newest-box {
+        width: 40vmin;
     }
 }
 
@@ -253,5 +267,9 @@
         justify-content: flex-start;
         padding: 0 5vmin;
         margin-top: 2vmin;
+    }
+
+    .home-newest-product-btn {
+        display: none;
     }
 }

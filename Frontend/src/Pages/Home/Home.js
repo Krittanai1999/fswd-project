@@ -1,13 +1,12 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
-    Button,
+    Badge,
     Carousel,
     Col,
     Container,
     Row
 } from 'react-bootstrap';
-import Swiper from 'react-id-swiper';
 
 // icon
 import {
@@ -28,91 +27,63 @@ const exProduct = [
     {
         name: "Product name",
         img: ex_img,
-        price: 12345
+        price: 12345,
+        discount: 0.15
     },
     {
         name: "Product name",
         img: ex_img,
-        price: 12345
+        price: 12345,
+        discount: 0.15
     },
     {
         name: "Product name",
         img: ex_img,
-        price: 12345
+        price: 12345,
+        discount: 0.15
     },
     {
         name: "Product name",
         img: ex_img,
-        price: 12345
+        price: 12345,
+        discount: 0.15
     },
     {
         name: "Product name",
         img: ex_img,
-        price: 12345
+        price: 12345,
+        discount: 0.15
     },
     {
         name: "Product name",
         img: ex_img,
-        price: 12345
+        price: 12345,
+        discount: 0.15
     },
     {
         name: "Product name",
         img: ex_img,
-        price: 12345
+        price: 12345,
+        discount: 0.15
     },
     {
         name: "Product name",
         img: ex_img,
-        price: 12345
+        price: 12345,
+        discount: 0.15
     },
 ];
 
 const commaNumber = require('comma-number');
 
 const Home = () => {
-    const params = {
-        pagination: {
-            el: '.swiper-pagination',
-            type: "bullets",
-            clickable: true
-        },
+    const slidePrev = (id) => {
+        document.getElementById(id).scrollLeft -= 500;
     }
 
-    const swiperRef = useRef(null);
-    const [currentIndex, updateCurrentIndex] = useState(0);
-
-    // Manipulate swiper from outside
-    const goNext = () => {
-        if (swiperRef.current && swiperRef.current.swiper) {
-            swiperRef.current.swiper.slideNext();
-        }
-    };
-
-    const goPrev = () => {
-        if (swiperRef.current && swiperRef.current.swiper) {
-            swiperRef.current.swiper.slidePrev();
-        }
-    };
-
-    const updateIndex = useCallback(
-        () => updateCurrentIndex(swiperRef.current.swiper.realIndex),
-        []
-    );
-
-    // Add eventlisteners for swiper after initializing
-    useEffect(() => {
-        const swiperInstance = swiperRef.current.swiper;
-
-        if (swiperInstance) {
-            swiperInstance.on("slideChange", updateIndex);
-        }
-
-        return () => {
-            if (swiperInstance) {
-                swiperInstance.off("slideChange", updateIndex);
-            }
-        };
-    }, [updateIndex]);
+    const slideNext = (id) => {
+        document.getElementById(id).scrollLeft += 500;
+    }
 
     return (
         <div className="page-home">
@@ -154,15 +125,18 @@ const Home = () => {
             </Carousel>
 
             {/* Promotion */}
+
             <Container fluid className="home-promotion my-4 pt-1">
                 {/* Head */}
                 <Row className="home-promotion-small">
                     <Col xs={12} md={8} className="home-promotion-head pt-2">
-                        <h5>Promotion <span style={{ color: "#ff0000" }}>15% OFF</span></h5>
+                        <h5>
+                            Promotion  <span style={{ color: "#ff0000", fontWeight: 600 }}>15% OFF!!</span>
+                        </h5>
                     </Col>
                     <Col xs={12} md={4} className="home-discover home-pr">
                         <Link to="/" className="home-discover-box">
-                            <h5>Discover more</h5>
+                            <h5>See more</h5>
                             <div className="discover-arrow">
                                 <RiArrowRightLine />
                             </div>
@@ -174,23 +148,23 @@ const Home = () => {
                 <div className="home-promotion-product">
                     <div className="home-promotion-banner">
                         <h5>Promotion</h5>
-                        <h2>15% OFF</h2>
+                        <h2>15% OFF!!</h2>
                         <Link to="/" className="home-discover-box">
-                            <h5>Discover more</h5>
+                            <h5>See more</h5>
                             <div className="discover-arrow">
                                 <RiArrowRightLine />
                             </div>
                         </Link>
                         <div className="slide-btn-box">
-                            <button className="slide-btn">
+                            <button className="slide-btn" onClick={() => slidePrev('pr-slide')}>
                                 <IoIosArrowBack />
                             </button>
-                            <button className="slide-btn">
+                            <button className="slide-btn" onClick={() => slideNext('pr-slide')}>
                                 <IoIosArrowForward />
                             </button>
                         </div>
                     </div>
-                    <div className="home-promotion-inner">
+                    <div id="pr-slide" className="home-promotion-inner">
                         <div className="home-promotion-wrapper">
                             {exProduct.map(item => {
                                 return (
@@ -207,7 +181,7 @@ const Home = () => {
                                                 <h5>{item.name}</h5>
                                             </div>
                                             <div className="home-promotion-price">
-                                                <h5>{commaNumber(item.price)} Bath</h5>
+                                                <h5><span className="new-price">{commaNumber(item.price - (item.price * item.discount))}</span> <span className="old-price">{commaNumber(item.price)}</span> Bath</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -220,13 +194,12 @@ const Home = () => {
 
 
             {/* Lastest Product */}
-            <Container fluid className="home-lastest-product">
+
+            <Container fluid className="home-newest-product my-4 pt-4">
                 {/* Head */}
                 <Row>
-                    <Col xs={12} sm={6} md={8} className="home-lastest-product-head">
-                        <h3>Lastest Products</h3>
-                    </Col>
-                    <Col xs={12} sm={6} md={4} className="home-discover">
+                    <Col xs={12} sm={8} md={8} className="home-newest-product-head">
+                        <h3>Lastest Products <Badge variant="danger">NEW!</Badge></h3>
                         <Link to="/" className="home-discover-box">
                             <h5>Discover more</h5>
                             <div className="discover-arrow">
@@ -234,76 +207,44 @@ const Home = () => {
                             </div>
                         </Link>
                     </Col>
-                </Row>
-
-                {/* New product */}
-                <div className="home-new-product">
-                    <Swiper {...params} ref={swiperRef}>
-                        <div className="home-new-product-slide">
-                            {exProduct.map((item, index) => {
-                                if (index < 4) {
-                                    return (
-                                        <div className="home-new-product-box">
-                                            <div className="home-new-product-img">
-                                                <img
-                                                    src={item.img}
-                                                    alt={item.name}
-                                                    width="100%"
-                                                />
-                                            </div>
-                                            <div className="home-new-product-detail">
-                                                <div className="home-new-product-name">
-                                                    <h5>{item.name}</h5>
-                                                </div>
-                                                <div className="home-new-product-price">
-                                                    <h5>{commaNumber(item.price)} Bath</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )
-                                }
-                            })}
+                    <Col xs={12} sm={4} md={4} className="home-newest-product-btn">
+                        <div className="slide-btn-box">
+                            <button className="slide-btn" onClick={() => slidePrev('new-slide')}>
+                                <IoIosArrowBack />
+                            </button>
+                            <button className="slide-btn" onClick={() => slideNext('new-slide')}>
+                                <IoIosArrowForward />
+                            </button>
                         </div>
-                        <div className="home-new-product-slide">
-                            {exProduct.map((item, index) => {
-                                if (index >= 4 && index < 8) {
-                                    return (
-                                        <div className="home-new-product-box">
-                                            <div className="home-new-product-img">
-                                                <img
-                                                    src={item.img}
-                                                    alt={item.name}
-                                                    width="100%"
-                                                />
-                                            </div>
-                                            <div className="home-new-product-detail">
-                                                <div className="home-new-product-name">
-                                                    <h5>{item.name}</h5>
-                                                </div>
-                                                <div className="home-new-product-price">
-                                                    <h5>{commaNumber(item.price)} Bath</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )
-                                }
-
-                            })}
-                        </div>
-                    </Swiper>
-                </div>
-
-                {/* Button */}
-                <Row>
-                    <Col xs sm={12} className="home-lastest-product-arrow">
-                        <Button variant="light" onClick={goPrev}>
-                            <IoIosArrowBack />
-                        </Button>
-                        <Button variant="light" onClick={goNext}>
-                            <IoIosArrowForward />
-                        </Button>
                     </Col>
                 </Row>
+
+                {/* Newest product */}
+                <div className="home-newest-product">
+                    <div id="new-slide" className="home-newest-inner">
+                        {exProduct.map(item => {
+                            return (
+                                <div className="home-newest-box">
+                                    <div className="home-newest-img">
+                                        <img
+                                            src={item.img}
+                                            alt={item.name}
+                                            width="100%"
+                                        />
+                                    </div>
+                                    <div className="home-newest-detail">
+                                        <div className="home-newest-name">
+                                            <h5>{item.name}</h5>
+                                        </div>
+                                        <div className="home-newest-price">
+                                            <h5>{commaNumber(item.price)} Bath</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
             </Container>
 
             <Footer />

@@ -9228,13 +9228,6 @@
   "resolved" "https://registry.npmjs.org/react-icons/-/react-icons-4.2.0.tgz"
   "version" "4.2.0"
 
-"react-id-swiper@^4.0.0":
-  "integrity" "sha512-BFY8VQYgc1ECkT1Ek6MYSF8MADjWYZctdeRlMA202mjGcdjq1Bugfhg207KHTjGWKWZlY/7/nxFShqQo74RslA=="
-  "resolved" "https://registry.npmjs.org/react-id-swiper/-/react-id-swiper-4.0.0.tgz"
-  "version" "4.0.0"
-  dependencies:
-    "object-assign" "^4.1.1"
-
 "react-is@^16.3.2":
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
@@ -10814,7 +10807,7 @@
     "unquote" "~1.1.1"
     "util.promisify" "~1.0.0"
 
-"swiper@^6.5.7", "swiper@>=5.0.0":
+"swiper@^6.5.7":
   "integrity" "sha512-PGS1eUxBgLkb5uCqAMQkE465lsk01Uf8FJWA1CMBQ374leDUSK79J2fIv+c6H/nXPixJ8VzzL5jPjTSu1f9AeQ=="
   "resolved" "https://registry.npmjs.org/swiper/-/swiper-6.5.7.tgz"
   "version" "6.5.7"
