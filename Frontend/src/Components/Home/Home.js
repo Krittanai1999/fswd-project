@@ -78,20 +78,20 @@ const Home = () => {
     []
   );
 
-  // Add eventlisteners for swiper after initializing
-  useEffect(() => {
-    const swiperInstance = swiperRef.current.swiper;
+  // // Add eventlisteners for swiper after initializing
+  // useEffect(() => {
+  //   const swiperInstance = swiperRef.current.swiper;
 
-    if (swiperInstance) {
-      swiperInstance.on("slideChange", updateIndex);
-    }
+  //   if (swiperInstance) {
+  //     swiperInstance.on("slideChange", updateIndex);
+  //   }
 
-    return () => {
-      if (swiperInstance) {
-        swiperInstance.off("slideChange", updateIndex);
-      }
-    };
-  }, [updateIndex]);
+  //   return () => {
+  //     if (swiperInstance) {
+  //       swiperInstance.off("slideChange", updateIndex);
+  //     }
+  //   };
+  // }, [updateIndex]);
 
   const productItem = () => {
     return data?.products?.map((product) => (
