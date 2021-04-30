@@ -8,7 +8,9 @@ import {
     Row
 } from 'react-bootstrap';
 import Swiper from 'react-id-swiper';
-import { 
+
+// icon
+import {
     IoIosArrowBack,
     IoIosArrowForward
 } from 'react-icons/io';
@@ -21,6 +23,51 @@ import Footer from '../../Components/Footer/Footer';
 import './Home.css';
 
 import ex_img from '../../img/product-ex.png';
+
+const exProduct = [
+    {
+        name: "Product name",
+        img: ex_img,
+        price: 12345
+    },
+    {
+        name: "Product name",
+        img: ex_img,
+        price: 12345
+    },
+    {
+        name: "Product name",
+        img: ex_img,
+        price: 12345
+    },
+    {
+        name: "Product name",
+        img: ex_img,
+        price: 12345
+    },
+    {
+        name: "Product name",
+        img: ex_img,
+        price: 12345
+    },
+    {
+        name: "Product name",
+        img: ex_img,
+        price: 12345
+    },
+    {
+        name: "Product name",
+        img: ex_img,
+        price: 12345
+    },
+    {
+        name: "Product name",
+        img: ex_img,
+        price: 12345
+    },
+];
+
+const commaNumber = require('comma-number');
 
 const Home = () => {
     const params = {
@@ -69,16 +116,16 @@ const Home = () => {
 
     return (
         <div className="page-home">
-            {/* Promotion */}
+            {/* Banner */}
             <Carousel className="home-promo">
                 <Carousel.Item interval={2000}>
                     <img
                         className="d-block w-100"
                         src="https://picsum.photos/800/400?text=First slide&bg=373940"
-                        alt="First Promotion"
+                        alt="First Banner"
                     />
-                    <Carousel.Caption className="home-promotion-caption">
-                        <h3>First promotion</h3>
+                    <Carousel.Caption className="home-banner-caption">
+                        <h3>First Banner</h3>
                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -86,10 +133,10 @@ const Home = () => {
                     <img
                         className="d-block w-100"
                         src="https://picsum.photos/800/400?text=Second slide&bg=373940"
-                        alt="Second Promotion"
+                        alt="Second Banner"
                     />
-                    <Carousel.Caption className="home-promotion-caption">
-                        <h3>Second promotion</h3>
+                    <Carousel.Caption className="home-banner-caption">
+                        <h3>Second Banner</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -97,30 +144,89 @@ const Home = () => {
                     <img
                         className="d-block w-100"
                         src="https://picsum.photos/800/400?text=Third slide&bg=373940"
-                        alt="Third Promotion"
+                        alt="Third Banner"
                     />
-                    <Carousel.Caption className="home-promotion-caption">
-                        <h3>Third promotion</h3>
+                    <Carousel.Caption className="home-banner-caption">
+                        <h3>Third Banner</h3>
                         <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
 
-            {/* Banner */}
-            <div className="home-banner">
-                <div className="home-banner-box">
-                    Banner
+            {/* Promotion */}
+            <Container fluid className="home-promotion my-4 pt-1">
+                {/* Head */}
+                <Row className="home-promotion-small">
+                    <Col xs={12} md={8} className="home-promotion-head pt-2">
+                        <h5>Promotion <span style={{ color: "#ff0000" }}>15% OFF</span></h5>
+                    </Col>
+                    <Col xs={12} md={4} className="home-discover home-pr">
+                        <Link to="/" className="home-discover-box">
+                            <h5>Discover more</h5>
+                            <div className="discover-arrow">
+                                <RiArrowRightLine />
+                            </div>
+                        </Link>
+                    </Col>
+                </Row>
+
+                {/* Promotion product */}
+                <div className="home-promotion-product">
+                    <div className="home-promotion-banner">
+                        <h5>Promotion</h5>
+                        <h2>15% OFF</h2>
+                        <Link to="/" className="home-discover-box">
+                            <h5>Discover more</h5>
+                            <div className="discover-arrow">
+                                <RiArrowRightLine />
+                            </div>
+                        </Link>
+                        <div className="slide-btn-box">
+                            <button className="slide-btn">
+                                <IoIosArrowBack />
+                            </button>
+                            <button className="slide-btn">
+                                <IoIosArrowForward />
+                            </button>
+                        </div>
+                    </div>
+                    <div className="home-promotion-inner">
+                        <div className="home-promotion-wrapper">
+                            {exProduct.map(item => {
+                                return (
+                                    <div className="home-promotion-box">
+                                        <div className="home-promotion-img">
+                                            <img
+                                                src={item.img}
+                                                alt={item.name}
+                                                width="100%"
+                                            />
+                                        </div>
+                                        <div className="home-promotion-detail">
+                                            <div className="home-promotion-name">
+                                                <h5>{item.name}</h5>
+                                            </div>
+                                            <div className="home-promotion-price">
+                                                <h5>{commaNumber(item.price)} Bath</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </Container>
+
 
             {/* Lastest Product */}
             <Container fluid className="home-lastest-product">
                 {/* Head */}
                 <Row>
-                    <Col xs={6} md={8} className="home-lastest-product-head">
+                    <Col xs={12} sm={6} md={8} className="home-lastest-product-head">
                         <h3>Lastest Products</h3>
                     </Col>
-                    <Col xs={12} md={4} className="home-discover">
+                    <Col xs={12} sm={6} md={4} className="home-discover">
                         <Link to="/" className="home-discover-box">
                             <h5>Discover more</h5>
                             <div className="discover-arrow">
@@ -134,116 +240,55 @@ const Home = () => {
                 <div className="home-new-product">
                     <Swiper {...params} ref={swiperRef}>
                         <div className="home-new-product-slide">
-                            <div className="home-new-product-box">
-                                <div className="home-new-product-img">
-                                    <img
-                                        src={ex_img}
-                                        alt="right arrow"
-                                        width="100%"
-                                    />
-                                </div>
-                                <div className="home-new-product-detail">
-                                    <div className="home-new-product-name">
-                                        <h5>Product Name</h5>
-                                    </div>
-                                    <div className="home-new-product-price">
-                                        <h5>12,345 Bath</h5>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="home-new-product-box">
-                                <div className="home-new-product-img">
-                                    <img
-                                        src={ex_img}
-                                        alt="right arrow"
-                                        width="100%"
-                                    />
-                                </div>
-                                <div className="home-new-product-detail">
-                                    <div className="home-new-product-name">
-                                        <h5>Product Name</h5>
-                                    </div>
-                                    <div className="home-new-product-price">
-                                        <h5>12,345 Bath</h5>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="home-new-product-box">
-                                <div className="home-new-product-img">
-                                    <img
-                                        src={ex_img}
-                                        alt="right arrow"
-                                        width="100%"
-                                    />
-                                </div>
-                                <div className="home-new-product-detail">
-                                    <div className="home-new-product-name">
-                                        <h5>Product Name</h5>
-                                    </div>
-                                    <div className="home-new-product-price">
-                                        <h5>12,345 THB</h5>
-                                    </div>
-                                </div>
-                            </div>
+                            {exProduct.map((item, index) => {
+                                if (index < 4) {
+                                    return (
+                                        <div className="home-new-product-box">
+                                            <div className="home-new-product-img">
+                                                <img
+                                                    src={item.img}
+                                                    alt={item.name}
+                                                    width="100%"
+                                                />
+                                            </div>
+                                            <div className="home-new-product-detail">
+                                                <div className="home-new-product-name">
+                                                    <h5>{item.name}</h5>
+                                                </div>
+                                                <div className="home-new-product-price">
+                                                    <h5>{commaNumber(item.price)} Bath</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            })}
                         </div>
-                        <div className="slide-2">
-                            <div className="home-new-product-slide">
-                                <div className="home-new-product-box">
-                                    <div className="home-new-product-img">
-                                        <img
-                                            src={ex_img}
-                                            alt="right arrow"
-                                            width="100%"
-                                        />
-                                    </div>
-                                    <div className="home-new-product-detail">
-                                        <div className="home-new-product-name">
-                                            <h5>Product Name</h5>
+                        <div className="home-new-product-slide">
+                            {exProduct.map((item, index) => {
+                                if (index >= 4 && index < 8) {
+                                    return (
+                                        <div className="home-new-product-box">
+                                            <div className="home-new-product-img">
+                                                <img
+                                                    src={item.img}
+                                                    alt={item.name}
+                                                    width="100%"
+                                                />
+                                            </div>
+                                            <div className="home-new-product-detail">
+                                                <div className="home-new-product-name">
+                                                    <h5>{item.name}</h5>
+                                                </div>
+                                                <div className="home-new-product-price">
+                                                    <h5>{commaNumber(item.price)} Bath</h5>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className="home-new-product-price">
-                                            <h5>12,345 Bath</h5>
-                                        </div>
-                                    </div>
-                                </div>
+                                    )
+                                }
 
-                                <div className="home-new-product-box">
-                                    <div className="home-new-product-img">
-                                        <img
-                                            src={ex_img}
-                                            alt="right arrow"
-                                            width="100%"
-                                        />
-                                    </div>
-                                    <div className="home-new-product-detail">
-                                        <div className="home-new-product-name">
-                                            <h5>Product Name</h5>
-                                        </div>
-                                        <div className="home-new-product-price">
-                                            <h5>12,345 Bath</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="home-new-product-box">
-                                    <div className="home-new-product-img">
-                                        <img
-                                            src={ex_img}
-                                            alt="right arrow"
-                                            width="100%"
-                                        />
-                                    </div>
-                                    <div className="home-new-product-detail">
-                                        <div className="home-new-product-name">
-                                            <h5>Product Name</h5>
-                                        </div>
-                                        <div className="home-new-product-price">
-                                            <h5>12,345 THB</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            })}
                         </div>
                     </Swiper>
                 </div>
@@ -260,7 +305,7 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
-            
+
             <Footer />
         </div>
 

@@ -3410,10 +3410,10 @@
   dependencies:
     "delayed-stream" "~1.0.0"
 
-"comma-number@^2.0.1":
-  "integrity" "sha512-hrxY6UjA+tSUV5uZS2iOF8+/q7AACiq/zc9R6SO61MmOhrzNC0qXXh7g/jNYTm09fp6T40vQg15zkCmTJVA8Ww=="
-  "resolved" "https://registry.npmjs.org/comma-number/-/comma-number-2.0.1.tgz"
-  "version" "2.0.1"
+"comma-number@^2.0.2":
+  "integrity" "sha512-+0izevRLy+l+W07CbfYf2EsEtbApfvk62NLGHlPR9bWUv7rqDEmfqPOH1gAOBNsZb/6rcJLGXsw0JW4zaojjbg=="
+  "resolved" "https://registry.npmjs.org/comma-number/-/comma-number-2.0.2.tgz"
+  "version" "2.0.2"
 
 "commander@^2.20.0":
   "integrity" "sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ=="

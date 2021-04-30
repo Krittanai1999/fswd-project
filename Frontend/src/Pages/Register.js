@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
+// icon
+import {
+    AiOutlineEye,
+    AiOutlineEyeInvisible
+} from 'react-icons/ai';
+
 // image
 import logo from '../img/logo.png';
 
 // CSS
 import '../style/Login&Register.css';
 
+const eyeVisible = <AiOutlineEye />;
+const eyeInvisible = <AiOutlineEyeInvisible />;
+
 const Register = () => {
+    const [passwordShow, setPasswordShow] = useState(false);
+    const togglePasswordVisible = () => {
+        setPasswordShow(passwordShow ? false : true);
+    };
+
     return (
         <div className="register-page">
             <div className="container-bg">
@@ -40,12 +55,21 @@ const Register = () => {
                             placeholder="Username"
                             // value=""
                         />
-                        <input
-                            className="Form-input Registerform-password"
-                            type="password"
-                            placeholder="Password"
-                            // value=""
-                        />
+                        <div className="password-wrapper">
+                            <input
+                                className="Form-input Registerform-password"
+                                type={passwordShow ? "text" : "password"}
+                                placeholder="Password"
+                                // value=""
+                            />
+                            <i 
+                                onClick={togglePasswordVisible}
+                                // onMouseEnter={() => setPasswordShow(true)}
+                                // onMouseLeave={() => setPasswordShow(false)}
+                            >
+                                {passwordShow ? eyeVisible : eyeInvisible}
+                            </i>
+                        </div>
                         <button className="Form-btn Registerform-btn" type="submit">
                             Register
                         </button>

@@ -5,20 +5,159 @@
     font-family: 'ABeeZee', sans-serif;
 }
 
-.home-promotion-caption {
+.home-banner-caption {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.home-banner {
-    height: 55vw;
-    padding: 7vw 5vmin;
+/* Discover head */
+
+
+
+.home-discover {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 5vmin;
 }
 
-.home-banner-box {
-    background-color: var(--bg-mocha);
-    width: 100%;
+.home-discover-box {
+    width: auto;
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color-primary);
 }
+
+.home-discover-box:hover {
+    text-decoration: none;
+    color: var(--text-color-primary);
+    transform: scale(1.2);
+}
+
+.home-discover h5 {
+    margin: 0;
+    padding: 0;
+    font-size: 2.5vmin;
+}
+
+.discover-arrow {
+    font-size: 2.5vmin;
+    margin: 0 1vmin;
+}
+
+/* Promotion */
+
+.home-promotion {
+    color: var(--text-color-primary);
+    background-color: var(--bg-latte);
+}
+
+.home-promotion-head {
+    padding: 0 5vmin;
+}
+
+.home-promotion-head h5 {
+    margin: 0;
+    font-size: 5vmin;
+}
+
+.home-promotion-product {
+    width: 100%;
+    margin-top: 3vmin;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.home-promotion-banner {
+    flex: 0 0 30%;
+    padding: 0 3vmin;
+}
+
+.home-promotion-banner h5 {
+    font-size: 3vmax;
+}
+
+.home-promotion-banner h2 {
+    font-size: 3.5vmax;
+    color: #ff0000;
+}
+
+.home-promotion-small {
+    display: none;
+}
+
+.home-promotion-banner > .home-discover-box h5 {
+    margin: 0;
+    font-size: 1.7vmax;
+    transition: transform 250ms;
+}
+
+.home-promotion-banner > .home-discover-box:hover {
+    text-decoration: none;
+    color: var(--text-color-primary);
+    transform: scale(1.1);
+}
+
+/* Button */
+.slide-btn-box {
+    padding: 2vmin 0;
+}
+.slide-btn {
+    background-color: var(--bg-mocha);
+    border: none;
+    width: 3vmax;
+    height: 3vmax;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2vmax;
+    padding: 0.5vmax;
+    margin-right: 1vmax ;
+    color: #353030;
+}
+
+/* product */
+.home-promotion-inner {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.home-promotion-wrapper {
+    flex: 0 0 70%;
+    width: auto;
+    white-space: nowrap;
+}
+
+.home-promotion-box {
+    width: 20vmax;
+    padding: 1vmin;
+    display: inline-block;
+}
+
+.home-promotion-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.home-promotion-name {
+    margin: 0.5vmax 0;
+}
+
+.home-promotion-name h5 {
+    font-size: 1.3vmax;
+}
+
+.home-promotion-price h5 {
+    font-size: 1.3vmax;
+    font-weight: bold;
+}
+
+/* lastest product */
 
 .home-lastest-product {
     color: var(--text-color-primary);
@@ -45,52 +184,20 @@
     margin: 0 1vmin;
 }
 
-.home-discover {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0 5vmin;
-}
-
-.home-discover-box {
-    width: auto;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text-color-primary);
-}
-
-.home-discover-box:hover {
-    text-decoration: none;
-    color: var(--text-color-primary);
-}
-
-.home-discover h5 {
-    margin: 0;
-    padding: 0;
-    font-size: 2.5vmin;
-}
-
-.discover-arrow {
-    font-size: 2.5vmin;
-    margin: 0 1vmin;
-}
-
 .home-new-product {
     width: auto;
     margin: 3vmin 0;
-    /* background-color: violet; */
 }
 
 .home-new-product-slide {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
 }
 
 .home-new-product-box {
-    width: 33.33%;
+    width: 25%;
     padding: 0 2vmax;
 }
 
@@ -112,4 +219,39 @@
 .home-new-product-price h5 {
     font-size: 1.3vmax;
     font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+    .home-discover.home-pr {
+        justify-content: flex-start;
+        padding: 0 5vmin;
+        margin-top: 2vmin;
+    }
+
+    .home-promotion-banner {
+        display: none;
+    }
+
+    .home-promotion-small {
+        display: block;
+    }
+
+    .home-promotion-box {
+        width: 30vmin;
+    }
+
+    .home-new-product-box {
+        width: 50%;
+        padding: 0 2vmax;
+    }
+}
+
+
+
+@media screen and (max-width: 575px) {
+    .home-discover {
+        justify-content: flex-start;
+        padding: 0 5vmin;
+        margin-top: 2vmin;
+    }
 }

@@ -72,6 +72,19 @@
     color: var(--input-text);
 }
 
+.password-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+i {
+    position: absolute;
+    top: 0;
+    right: 1vmin;
+    font-size: 1.5vmax;
+    cursor: pointer;
+}
+
 .Form-btn {
     width: 100%;
     outline: none;
@@ -159,6 +172,10 @@
         height: 5vmax;
         margin-bottom: 2vmax;
         font-size: 1.7vmax;
+    }
+
+    i {
+        font-size: 3vmax;
     }
 
     .Form-btn {
