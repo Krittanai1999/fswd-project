@@ -6,7 +6,7 @@ import {
     Switch,
     Route,
     Link,
-    NavLink
+    // NavLink
 } from "react-router-dom";
 import {
     FaRegUser
@@ -23,6 +23,8 @@ import 'swiper/swiper-bundle.css';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
+import Products from './Pages/Products/Products';
+import ProductDetail from './Pages/Products/ProductDetail';
 
 const catagoryMenu = [
     {
@@ -135,6 +137,12 @@ function App() {
                     </Route>
                     <Route path="/register">
                         <Register />
+                    </Route>
+                    <Route path="/products/:productSlug">
+                        <ProductDetail />
+                    </Route>
+                    <Route path="/products">
+                        <Products />
                     </Route>
                     <Route path="/">
                         <Home />

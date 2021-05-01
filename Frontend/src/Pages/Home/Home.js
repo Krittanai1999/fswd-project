@@ -23,66 +23,17 @@ import './Home.css';
 
 import ex_img from '../../img/product-ex.png';
 
-const exProduct = [
-    {
-        name: "Product name",
-        img: ex_img,
-        price: 12345,
-        discount: 0.15
-    },
-    {
-        name: "Product name",
-        img: ex_img,
-        price: 12345,
-        discount: 0.15
-    },
-    {
-        name: "Product name",
-        img: ex_img,
-        price: 12345,
-        discount: 0.15
-    },
-    {
-        name: "Product name",
-        img: ex_img,
-        price: 12345,
-        discount: 0.15
-    },
-    {
-        name: "Product name",
-        img: ex_img,
-        price: 12345,
-        discount: 0.15
-    },
-    {
-        name: "Product name",
-        img: ex_img,
-        price: 12345,
-        discount: 0.15
-    },
-    {
-        name: "Product name",
-        img: ex_img,
-        price: 12345,
-        discount: 0.15
-    },
-    {
-        name: "Product name",
-        img: ex_img,
-        price: 12345,
-        discount: 0.15
-    },
-];
+import exProduct from '../exProject.json';
 
 const commaNumber = require('comma-number');
 
 const Home = () => {
-    const slidePrev = (id) => {
-        document.getElementById(id).scrollLeft -= 500;
+    const slidePrev = (id, size) => {
+        document.getElementById(id).scrollLeft -= size;
     }
 
-    const slideNext = (id) => {
-        document.getElementById(id).scrollLeft += 500;
+    const slideNext = (id, size) => {
+        document.getElementById(id).scrollLeft += size;
     }
 
     return (
@@ -156,10 +107,10 @@ const Home = () => {
                             </div>
                         </Link>
                         <div className="slide-btn-box">
-                            <button className="slide-btn" onClick={() => slidePrev('pr-slide')}>
+                            <button className="slide-btn" onClick={() => slidePrev('pr-slide', 500)}>
                                 <IoIosArrowBack />
                             </button>
-                            <button className="slide-btn" onClick={() => slideNext('pr-slide')}>
+                            <button className="slide-btn" onClick={() => slideNext('pr-slide', 500)}>
                                 <IoIosArrowForward />
                             </button>
                         </div>
@@ -168,10 +119,10 @@ const Home = () => {
                         <div className="home-promotion-wrapper">
                             {exProduct.map(item => {
                                 return (
-                                    <div className="home-promotion-box">
+                                    <Link to={"/products/" + item.productSlug} className="home-promotion-box">
                                         <div className="home-promotion-img">
                                             <img
-                                                src={item.img}
+                                                src={ex_img}
                                                 alt={item.name}
                                                 width="100%"
                                             />
@@ -181,10 +132,10 @@ const Home = () => {
                                                 <h5>{item.name}</h5>
                                             </div>
                                             <div className="home-promotion-price">
-                                                <h5><span className="new-price">{commaNumber(item.price - (item.price * item.discount))}</span> <span className="old-price">{commaNumber(item.price)}</span> Bath</h5>
+                                                <h5><span className="new-price">{commaNumber(item.price - (item.price * item.discount))}</span> <span className="old-price">{commaNumber(item.price)}</span> THB</h5>
                                             </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 )
                             })}
                         </div>
@@ -200,7 +151,7 @@ const Home = () => {
                 <Row>
                     <Col xs={12} sm={8} md={8} className="home-newest-product-head">
                         <h3>Lastest Products <Badge variant="danger">NEW!</Badge></h3>
-                        <Link to="/" className="home-discover-box">
+                        <Link to="/products" className="home-discover-box">
                             <h5>Discover more</h5>
                             <div className="discover-arrow">
                                 <RiArrowRightLine />
@@ -209,10 +160,10 @@ const Home = () => {
                     </Col>
                     <Col xs={12} sm={4} md={4} className="home-newest-product-btn">
                         <div className="slide-btn-box">
-                            <button className="slide-btn" onClick={() => slidePrev('new-slide')}>
+                            <button className="slide-btn" onClick={() => slidePrev('new-slide', 700)}>
                                 <IoIosArrowBack />
                             </button>
-                            <button className="slide-btn" onClick={() => slideNext('new-slide')}>
+                            <button className="slide-btn" onClick={() => slideNext('new-slide', 700)}>
                                 <IoIosArrowForward />
                             </button>
                         </div>
@@ -224,10 +175,10 @@ const Home = () => {
                     <div id="new-slide" className="home-newest-inner">
                         {exProduct.map(item => {
                             return (
-                                <div className="home-newest-box">
+                                <Link to={"/products/" + item.productSlug} className="home-newest-box">
                                     <div className="home-newest-img">
                                         <img
-                                            src={item.img}
+                                            src={ex_img}
                                             alt={item.name}
                                             width="100%"
                                         />
@@ -237,10 +188,10 @@ const Home = () => {
                                             <h5>{item.name}</h5>
                                         </div>
                                         <div className="home-newest-price">
-                                            <h5>{commaNumber(item.price)} Bath</h5>
+                                            <h5>{commaNumber(item.price)} THB</h5>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             )
                         })}
                     </div>

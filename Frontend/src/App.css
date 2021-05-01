@@ -15,16 +15,15 @@
 body {
     background-color: var(--bg-primary);
     font-family: 'ABeeZee', sans-serif;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 .Navbar-nav {
-    max-height: 20vh;
+    height: 16vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: var(--bg-secondary);
-    position: sticky;
     top: 0;
     z-index: 100;
 }
@@ -51,12 +50,12 @@ body {
     padding: 0 1vmax;
     height: 5vmin;
     flex: 1;
-    outline: 0;
 }
 
 .logo-img {
     height: 100%;
     padding: 0 2vmin;
+    outline: 0;
 }
 
 .search-box {

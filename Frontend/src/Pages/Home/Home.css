@@ -3,6 +3,9 @@
 .page-home {
     background-color: var(--bg-primary);
     font-family: 'ABeeZee', sans-serif;
+    height: calc(100vh - 16vh);
+    overflow: hidden;
+    overflow-y: auto;
 }
 
 .home-banner-caption {
@@ -40,7 +43,7 @@
 .home-discover-box h5 {
     margin: 0;
     padding: 0;
-    font-size: 1.7vmax;
+    font-size: 1.4vmax;
 }
 
 .discover-arrow {
@@ -139,6 +142,13 @@
     width: 20vmax;
     padding: 2vmin 1vmin;
     display: inline-block;
+    color: var(--text-color-primary);
+    text-decoration: none;
+}
+
+.home-promotion-box:hover {
+    color: var(--text-color-primary);
+    text-decoration: none;
 }
 
 .home-promotion-detail {
@@ -154,12 +164,12 @@
 }
 
 .home-promotion-name h5 {
-    font-size: 1.7vmax;
+    font-size: 1.5vmax;
     margin: 0;
 }
 
 .home-promotion-price h5 {
-    font-size: 1.3vmax;
+    font-size: 1.2vmax;
     font-weight: bold;
     margin: 0;
 }
@@ -169,7 +179,7 @@ span.old-price {
 }
 
 span.new-price {
-    font-size: 1.6vmax;
+    font-size: 1.4vmax;
     color: #ff0000;
 }
 
@@ -211,6 +221,13 @@ span.new-price {
     width: 28vmax;
     padding: 1vmin 2vmin;
     display: inline-block;
+    color: var(--text-color-primary);
+    text-decoration: none;
+}
+
+.home-newest-box:hover {
+    color: var(--text-color-primary);
+    text-decoration: none;
 }
 
 .home-newest-detail {
