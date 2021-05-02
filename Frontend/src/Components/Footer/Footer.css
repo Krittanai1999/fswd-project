@@ -6,7 +6,7 @@ footer {
 }
 
 .page-footer {
-    padding: 4vmin 0;
+    padding: 3vmin 0;
 }
 
 .footer-group-box {
@@ -23,14 +23,12 @@ footer {
     width: 80%;
 }
 
-.footer-text h3 {
-    color: var(--text-color-primary);
+.footer-group-info h3 {
     font-size: 2vmax;
 }
 
-.footer-text p {
-    color: var(--text-color-secondary);
-    font-size: 1.2vmax;
+.footer-group-info p {
+    font-size: 1.3vmax;
 }
 
 .footer-about h3 {
@@ -69,6 +67,33 @@ footer {
 }
 
 @media screen and (max-width: 767px) {
+    .footer-group-box {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .footer-group-img {
+        flex: 2 1;
+        padding: 0 4vmin;
+    }
+
+    .footer-group-img img {
+        width: 100%;
+    }
+
+    .footer-group-info {
+        flex: 4 1;
+        padding: 0 2vmin;
+    }
+
+    .footer-group-info h3 {
+        font-size: 3vmax;
+    }
+    
+    .footer-group-info p {
+        font-size: 2vmax;
+    }
+
     .footer-about-img {
         width: 20vmax;
         height: 20vmax;

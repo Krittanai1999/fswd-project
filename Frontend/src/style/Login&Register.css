@@ -188,3 +188,10 @@ i {
         font-size: 1.5vmax;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .login-page,
+    .register-page {
+        min-height: calc(100vh - 56px);
+    }
+}

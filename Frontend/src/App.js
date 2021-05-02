@@ -9,6 +9,12 @@ import {
     // NavLink
 } from "react-router-dom";
 import {
+    Nav,
+    Navbar,
+    NavDropdown
+} from 'react-bootstrap';
+
+import {
     FaRegUser
 } from 'react-icons/fa';
 import {
@@ -80,11 +86,13 @@ const catagoryMenu = [
 ];
 
 function App() {
+
     return (
         <>
             <Router>
                 <nav className="Navbar-nav">
-                    <div className="header-top">
+                    {/* Nav >= 768 */}
+                    <div className="header-top navWide">
                         <div className="header-top-container">
                             <div className="logo-box">
                                 <Link to="/" className="logo-img">
@@ -115,10 +123,11 @@ function App() {
                                     </Link>
                                 </div>
                             </div>
+
                         </div>
                     </div>
 
-                    <div className="header-menu">
+                    <div className="header-menu navWide">
                         <ul className="header-menu-container">
                             {catagoryMenu.map(menu => {
                                 return (
@@ -129,6 +138,36 @@ function App() {
                             })}
                         </ul>
                     </div>
+
+                    {/* Nav < 768 */}
+                    <Navbar expand="lg" className="navNarrow">
+                        <Navbar.Brand href="/" style={{ width: '40px', height: '40px' }}>
+                                <img src={logo} alt="" height="100%" />
+                        </Navbar.Brand>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="mr-auto">
+                                <Nav.Link href="/login">Login</Nav.Link>
+                                <Nav.Link href="/register">Register</Nav.Link>
+                                <NavDropdown title="Catagory" id="basic-nav-dropdown">
+                                    {catagoryMenu.map((menu, index) => {
+                                        if (index == 0) {
+                                            return (
+                                                <>
+                                                    <NavDropdown.Item href={'/' + menu.path}>{menu.name}</NavDropdown.Item>
+                                                    <NavDropdown.Divider />
+                                                </>
+                                            )
+                                        } else {
+                                            return (
+                                                <NavDropdown.Item href={'/' + menu.path}>{menu.name}</NavDropdown.Item>
+                                            )
+                                        }
+                                    })}
+                                </NavDropdown>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Navbar>
                 </nav>
 
                 <Switch>

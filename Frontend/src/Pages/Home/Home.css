@@ -254,6 +254,10 @@ span.new-price {
 }
 
 @media screen and (max-width: 767px) {
+    .page-home {
+        height: calc(100vh - 56px);
+    }
+
     .home-discover.home-pr {
         justify-content: flex-start;
         padding: 0 5vmin;

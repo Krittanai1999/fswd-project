@@ -171,7 +171,7 @@ body {
 .catagory-menu {
     padding: 0 2vmin;
     color: var(--text-color-primary);
-    font-size: 2.3vmin;
+    font-size: 2vmin;
     outline: 0;
     line-height: 1.5;
     text-decoration: none;
@@ -182,4 +182,37 @@ body {
 .catagory-menu:hover {
     text-decoration: none;
     color: var(--text-color-secondary);
+}
+
+.navNarrow {
+	display: none !important;
+    background-color: var(--bg-secondary);
+}
+
+.navbar-nav .dropdown-menu {
+    background-color: var(--bg-primary);
+}
+
+.dropdown-divider {
+    border-top: 1px solid rgba(0,0,0,.15) !important;
+}
+
+@media screen and (max-width: 767px) {
+    
+    .navNarrow {
+        display: flex !important;
+    }
+
+    .navWide {
+        display: none;
+    }
+
+    .Navbar-nav {
+        height: auto;
+    }
+
+    .header-top {
+        height: 8vmin;
+        box-shadow: 0 0 0 var(--boarder-color);
+    }
 }
