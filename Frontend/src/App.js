@@ -34,54 +34,30 @@ import Products from './Pages/Products/Products';
 import ProductDetail from './Pages/Products/ProductDetail';
 
 const catagoryMenu = [
+    // BEDROOM, BATHROOM, KITCHEN, LIVINGROOM, OTHER
     {
         id: 1,
-        name: "New",
+        name: "BEDROOM",
         path: ""
     },
     {
         id: 2,
-        name: "Sofas",
+        name: "BATHROOM",
         path: ""
     },
     {
         id: 3,
-        name: "Chairs",
+        name: "KITCHEN",
         path: ""
     },
     {
         id: 4,
-        name: "Table",
+        name: "LIVINGROOM",
         path: ""
     },
     {
         id: 5,
-        name: "Beds",
-        path: ""
-    },
-    {
-        id: 6,
-        name: "Wardrobes",
-        path: ""
-    },
-    {
-        id: 7,
-        name: "Drawer & Shelf",
-        path: ""
-    },
-    {
-        id: 8,
-        name: "Lighting",
-        path: ""
-    },
-    {
-        id: 9,
-        name: "Garden",
-        path: ""
-    },
-    {
-        id: 10,
-        name: "Children's furniture",
+        name: "OTHER",
         path: ""
     },
 ];
@@ -101,11 +77,11 @@ function App() {
                                 </Link>
                             </div>
 
-                            <div className="search-box">
+                            {/* <div className="search-box">
                                 <div className="search-field">
                                     <input type="search" className="search-input" placeholder="Seach for products.." />
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div className="header-icon-box">
                                 <Link to="/" title="shopping cart" className="header-shopping-cart-box">
@@ -143,7 +119,7 @@ function App() {
                     {/* Nav < 768 */}
                     <Navbar expand="lg" className="navNarrow">
                         <Navbar.Brand href="/" style={{ width: '40px', height: '40px' }}>
-                                <img src={logo} alt="" height="100%" />
+                            <img src={logo} alt="" height="100%" />
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
@@ -153,18 +129,9 @@ function App() {
                                 <Nav.Link href="/">Shopping cart</Nav.Link>
                                 <NavDropdown title="Catagory" id="basic-nav-dropdown">
                                     {catagoryMenu.map((menu, index) => {
-                                        if (index == 0) {
-                                            return (
-                                                <>
-                                                    <NavDropdown.Item href={'/' + menu.path}>{menu.name}</NavDropdown.Item>
-                                                    <NavDropdown.Divider />
-                                                </>
-                                            )
-                                        } else {
-                                            return (
-                                                <NavDropdown.Item href={'/' + menu.path}>{menu.name}</NavDropdown.Item>
-                                            )
-                                        }
+                                        return (
+                                            <NavDropdown.Item href={'/' + menu.path}>{menu.name}</NavDropdown.Item>
+                                        )
                                     })}
                                 </NavDropdown>
                             </Nav>
