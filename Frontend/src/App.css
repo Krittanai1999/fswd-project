@@ -8,21 +8,23 @@
     --boarder-color: #C4C4C4;
     --text-color-primary: #383F51;
     --text-color-secondary: #3C4F76;
+    --input-bg: #E4E4E4;
+    --input-text: #B8A7A7;
 }
 
 body {
     background-color: var(--bg-primary);
     font-family: 'ABeeZee', sans-serif;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 .Navbar-nav {
-    max-height: 20vh;
+    height: 16vh;
+    font-family: 'ABeeZee', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: var(--bg-secondary);
-    position: sticky;
     top: 0;
     z-index: 100;
 }
@@ -49,12 +51,12 @@ body {
     padding: 0 1vmax;
     height: 5vmin;
     flex: 1;
-    outline: 0;
 }
 
 .logo-img {
     height: 100%;
     padding: 0 2vmin;
+    outline: 0;
 }
 
 .search-box {
@@ -105,18 +107,28 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    height: 4vmin;
+    /* height: 4vmin; */
     flex: 3;
+    color: var(--text-color-primary);
 }
 
 .header-shopping-cart-box {
-    padding: 0 1.3vmax;
+    padding: 0 1.5vmax;
     height: 100%;
+    font-size: 4vmin;
+    color: var(--text-color-primary);
+    text-decoration: none;
+}
+
+.header-shopping-cart-box:hover {
+    text-decoration: none;
+    color: var(--text-color-secondary);
 }
 
 .header-user-icon {
     padding: 0.1vmax 0.5vmax;
     height: 100%;
+    font-size: 3vmin;
 }
 
 .header-user-login {
@@ -160,7 +172,7 @@ body {
 .catagory-menu {
     padding: 0 2vmin;
     color: var(--text-color-primary);
-    font-size: 2.3vmin;
+    font-size: 2vmin;
     outline: 0;
     line-height: 1.5;
     text-decoration: none;
@@ -171,4 +183,48 @@ body {
 .catagory-menu:hover {
     text-decoration: none;
     color: var(--text-color-secondary);
+}
+
+.navNarrow {
+	display: none !important;
+    background-color: var(--bg-secondary);
+}
+
+.navbar-nav .dropdown-menu {
+    background-color: var(--bg-primary);
+}
+
+.dropdown-divider {
+    border-top: 1px solid rgba(0,0,0,.15) !important;
+}
+
+/* bs */
+
+.menu_breadcrumb ol {
+    background-color: var(--bg-primary);
+    margin-bottom: 0;
+}
+
+.breadcrumb-item a {
+    color: var(--text-color-primary);
+}
+
+@media screen and (max-width: 767px) {
+    
+    .navNarrow {
+        display: flex !important;
+    }
+
+    .navWide {
+        display: none;
+    }
+
+    .Navbar-nav {
+        height: auto;
+    }
+
+    .header-top {
+        height: 8vmin;
+        box-shadow: 0 0 0 var(--boarder-color);
+    }
 }

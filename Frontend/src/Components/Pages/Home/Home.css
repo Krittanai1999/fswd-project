@@ -1,0 +1,296 @@
+@import '../../../App.css';
+
+.page-home {
+    background-color: var(--bg-primary);
+    font-family: 'ABeeZee', sans-serif;
+    height: calc(100vh - 16vh);
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.home-banner-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Discover head */
+
+.home-discover {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 5vmin;
+}
+
+.home-discover-box {
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color-primary);
+}
+
+.home-discover-box:hover {
+    text-decoration: none;
+    color: var(--text-color-primary);
+    transform: scale(1.2);
+}
+
+.home-discover-box {
+    margin-top: 2vmin;
+}
+
+.home-discover-box h5 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.4vmax;
+}
+
+.discover-arrow {
+    font-size: 2.5vmin;
+    margin: 0 1vmin;
+}
+
+/* Button */
+.slide-btn-box {
+    padding: 2vmin 0;
+}
+
+.slide-btn {
+    background-color: var(--bg-mocha);
+    border: none;
+    width: 3vmax;
+    height: 3vmax;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    outline: 0;
+    font-size: 1.2vmax;
+    padding: 0.5vmax;
+    margin-right: 1vmax ;
+    color: #353030;
+}
+
+/* Promotion */
+
+.home-promotion {
+    color: var(--text-color-primary);
+    background-color: var(--bg-latte);
+}
+
+.home-promotion-head {
+    padding: 0 5vmin;
+}
+
+.home-promotion-head h5 {
+    margin: 0;
+    font-size: 4vmin;
+}
+
+.home-promotion-product {
+    width: 100%;
+    margin-top: 2vmin;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.home-promotion-banner {
+    flex: 0 0 30%;
+    padding: 0 3vmin;
+}
+
+.home-promotion-banner h5 {
+    font-size: 3vmax;
+}
+
+.home-promotion-banner h2 {
+    font-size: 3.5vmax;
+    color: #ff0000;
+}
+
+.home-promotion-small {
+    display: none;
+}
+
+.home-promotion-banner > .home-discover-box h5 {
+    margin: 0;
+    font-size: 1.7vmax;
+    transition: transform 250ms;
+}
+
+.home-promotion-banner > .home-discover-box:hover {
+    text-decoration: none;
+    color: var(--text-color-primary);
+    transform: scale(1.1);
+}
+
+.home-promotion-inner {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.home-promotion-wrapper {
+    flex: 0 0 70%;
+    width: auto;
+    white-space: nowrap;
+}
+
+.home-promotion-box {
+    width: 20vmax;
+    padding: 2vmin 1vmin;
+    display: inline-block;
+    color: var(--text-color-primary);
+    text-decoration: none;
+}
+
+.home-promotion-box:hover {
+    color: var(--text-color-primary);
+    text-decoration: none;
+}
+
+.home-promotion-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1vmin 0;
+}
+
+.home-promotion-name {
+    margin: 0.5vmax 0;
+}
+
+.home-promotion-name h5 {
+    font-size: 1.5vmax;
+    margin: 0;
+}
+
+.home-promotion-price h5 {
+    font-size: 1.2vmax;
+    font-weight: bold;
+    margin: 0;
+}
+
+span.old-price {
+    text-decoration: line-through;
+}
+
+span.new-price {
+    font-size: 1.4vmax;
+    color: #ff0000;
+}
+
+
+/* newest product */
+
+.home-newest-product {
+    color: var(--text-color-primary);
+}
+
+.home-newest-product-head {
+    padding: 2vmin 5vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.home-newest-product-head h3 {
+    margin: 0;
+    font-size: 5vmin;
+}
+
+.home-newest-product-btn {
+    padding: 2vmin 2vmin;
+    text-align: right;
+}
+
+.home-newest-inner {
+    width: auto;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.home-newest-box {
+    width: 28vmax;
+    padding: 1vmin 2vmin;
+    display: inline-block;
+    color: var(--text-color-primary);
+    text-decoration: none;
+}
+
+.home-newest-box:hover {
+    color: var(--text-color-primary);
+    text-decoration: none;
+}
+
+.home-newest-detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vmin 0;
+}
+
+.home-newest-name {
+    margin: 0.5vmax 0;
+}
+
+.home-newest-name h5 {
+    font-size: 1.5vmax;
+    margin: 0;
+}
+
+.home-newest-price h5 {
+    font-size: 1.5vmax;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+@media screen and (max-width: 767px) {
+    .page-home {
+        height: calc(100vh - 56px);
+    }
+
+    .home-discover.home-pr {
+        justify-content: flex-start;
+        padding: 0 5vmin;
+        margin-top: 2vmin;
+    }
+
+    .home-promotion-banner {
+        display: none;
+    }
+
+    .home-promotion-small {
+        display: block;
+    }
+
+    .home-promotion-box {
+        width: 30vmin;
+    }
+
+    .home-newest-box {
+        width: 40vmin;
+    }
+}
+
+
+@media screen and (max-width: 575px) {
+    .home-discover {
+        justify-content: flex-start;
+        padding: 0 5vmin;
+        margin-top: 2vmin;
+    }
+
+    .home-newest-product-btn {
+        display: none;
+    }
+}

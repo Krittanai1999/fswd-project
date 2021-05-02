@@ -7,10 +7,69 @@ import { useSession } from "./contexts/SessionContext";
 import logo from "./img/logo.png";
 import shoppingcart from "./img/shopping-cart.png";
 import profile from "./img/user.png";
+import Home from '../src/Components/Pages/Home/Home';
+import Login from '../src/Components/Pages/Login';
+import Register from '../src/Components/Pages/Register';
+import Promotions from './Pages/Promotions/Promotions';
+import Products from './Pages/Products/Products';
+import ProductDetail from './Pages/Products/ProductDetail';
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "swiper/swiper-bundle.css";
+
+const catagoryMenu = [
+  {
+      id: 1,
+      name: "New",
+      path: ""
+  },
+  {
+      id: 2,
+      name: "Sofas",
+      path: ""
+  },
+  {
+      id: 3,
+      name: "Chairs",
+      path: ""
+  },
+  {
+      id: 4,
+      name: "Table",
+      path: ""
+  },
+  {
+      id: 5,
+      name: "Beds",
+      path: ""
+  },
+  {
+      id: 6,
+      name: "Wardrobes",
+      path: ""
+  },
+  {
+      id: 7,
+      name: "Drawer & Shelf",
+      path: ""
+  },
+  {
+      id: 8,
+      name: "Lighting",
+      path: ""
+  },
+  {
+      id: 9,
+      name: "Garden",
+      path: ""
+  },
+  {
+      id: 10,
+      name: "Children's furniture",
+      path: ""
+  },
+];
 
 const useStyles = makeStyles((theme) => ({
   styleBar: {

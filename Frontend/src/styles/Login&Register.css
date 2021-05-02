@@ -1,0 +1,197 @@
+@import '../App.css';
+
+.login-page,
+.register-page {
+    width: 100%;
+    min-height: calc(100vh - 110px);
+    background-color: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container-bg {
+    width: 60vw;
+    border-radius: 10px;
+    background-color: var(--bg-latte);
+    box-shadow: 5px 5px 10px 0px #383f5185;
+    padding: 4vmin 2vmin;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container-logo {
+    flex: 0 0 50%;
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-form {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 2vmin 4vmin;
+    text-align: center;
+}
+
+.container-form h5 {
+    font-size: 1.7vmax;
+    margin-bottom: 3vmin;
+    color: var(--text-color-primary);
+    text-align: left;
+}
+
+/* Form */
+.Form-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1vmin 0;
+}
+
+.Form-input {
+    width: 100%;
+    height: 2.5vmax;
+    padding: 0;
+    margin-bottom: 1.5vmax;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2vmax;
+    text-indent: 10px;
+    background-color: var(--input-bg);
+    color: var(--text-color-primary);
+}
+
+.Form-input::placeholder {
+    color: var(--input-text);
+}
+
+.password-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+i {
+    position: absolute;
+    top: 0;
+    right: 1vmin;
+    font-size: 1.5vmax;
+    cursor: pointer;
+}
+
+.Form-btn {
+    width: 100%;
+    outline: none;
+    padding: 1vmin 4vmin;
+    border: 0;
+    font-size: 1.3vmax;
+    border-radius: 5px;
+    background-color: var(--text-color-secondary);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.to-another-page {
+    font-size: 1vmax;
+    color: var(--text-color-secondary);
+    width: 100%;
+    text-align: center;
+}
+
+.user-link {
+    font-size: 1vmax;
+    color: var(--text-color-secondary);
+    text-decoration: underline;
+    padding: 0 1vmin;
+}
+
+.user-link:hover {
+    color: var(--text-color-secondary);
+    text-decoration: underline;
+}
+
+/* Login page */
+
+/* Register page */
+.Registerform-name {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Registerform-firstname {
+    flex: 0 0 48%;
+    max-width: 50%;
+}
+
+.Registerform-lastname {
+    flex: 0 0 48%;
+    max-width: 50%;
+}
+
+@media screen and (max-width: 767px) {
+    .login-page,
+    .register-page {
+        min-height: calc(100vh - 110px);
+    }
+
+    .container-bg {
+        width: 80vw;
+        padding: 4vmin 2vmin;
+    }
+
+    .container-logo {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .container-logo img {
+        width: 30%;
+    }
+    
+    .container-form {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .container-form h5 {
+        font-size: 2.5vmax;
+        margin-bottom: 1vmin;
+        text-align: center;
+    }
+
+    .Form-input {
+        height: 5vmax;
+        margin-bottom: 2vmax;
+        font-size: 1.7vmax;
+    }
+
+    i {
+        font-size: 3vmax;
+    }
+
+    .Form-btn {
+        padding: 2vmin 4vmin;
+        border: 0;
+        font-size: 2vmax;
+    }
+
+    .to-another-page, .user-link {
+        font-size: 1.5vmax;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .login-page,
+    .register-page {
+        min-height: calc(100vh - 56px);
+    }
+}
