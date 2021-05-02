@@ -1,224 +1,222 @@
-@import '../../App.css';
-
+@import url("../../../App.css");
 
 /* Products detail */
-.product-detail-page, .product-display-page {
-    background-color: var(--bg-primary);
-    font-family: 'ABeeZee', sans-serif;
-    height: calc(100vh - 16vh);
-    overflow: hidden;
-    overflow-y: auto;
+.product-detail-page,
+.product-display-page {
+  background-color: var(--bg-primary);
+  font-family: "ABeeZee", sans-serif;
+  height: calc(100vh - 16vh);
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 .product-detail-box {
-    padding-top: 5vmin;
+  padding-top: 5vmin;
 }
 
 .product-detail-data {
-    color: var(--text-color-primary);
+  color: var(--text-color-primary);
 }
 
 .product-detail-img {
-    padding: 0 4vmin;
+  padding: 0 4vmin;
 }
 
 .product-detail-img img {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .product-detail-name {
-    font-size: 2.5vmax;
-    font-weight: 700;
+  font-size: 2.5vmax;
+  font-weight: 700;
 }
 
 .product-detail-price {
-    font-size: 1.4vmax;
-    padding: 2vmin 0;
-    font-weight: 500;
+  font-size: 1.4vmax;
+  padding: 2vmin 0;
+  font-weight: 500;
 }
 
 .product-detail-price span {
-    font-size: 2vmax;
+  font-size: 2vmax;
 }
 
 .product-detail-desc {
-    font-size: 1.4vmax;
-    font-weight: 300;
-    padding-bottom: 3vmin;
+  font-size: 1.4vmax;
+  font-weight: 300;
+  padding-bottom: 3vmin;
 }
 
 /* Color selected */
 
 .product-detail-color {
-    padding: 2vmin 0;
+  padding: 2vmin 0;
 }
 
 .product-detail-color h4 {
-    font-size: 1.7vmax;
+  font-size: 1.7vmax;
 }
 
 .color-selected {
-    margin: 0;
-    padding: 0;
-    padding-top: 1vmin;
+  margin: 0;
+  padding: 0;
+  padding-top: 1vmin;
 }
 
 li.color-tab {
-    width: 5vmin;
-    height: 5vmin;
-    border-radius: 50%;
-    text-decoration: none;
-    list-style-type: none;
-    background-color: turquoise;
-    display: inline-block;
-    margin-right: 2vmin;
-    cursor: pointer;
+  width: 5vmin;
+  height: 5vmin;
+  border-radius: 50%;
+  text-decoration: none;
+  list-style-type: none;
+  background-color: turquoise;
+  display: inline-block;
+  margin-right: 2vmin;
+  cursor: pointer;
 }
 
 /* Button */
 
 .product-detail-btn {
-    padding: 4vmin 0;
+  padding: 4vmin 0;
 }
 
 .add-to-cast-btn {
-    background-color: var(--text-color-secondary);
-    border: none;
-    width: 100%;
-    height: 4vmax;
-    border-radius: 10px;
-    text-align: center;
-    text-decoration: none;
-    outline: 0;
-    font-size: 1.7vmax;
-    padding: 0.5vmax;
-    margin-right: 1vmax ;
-    color: #ffffff;
+  background-color: var(--text-color-secondary);
+  border: none;
+  width: 100%;
+  height: 4vmax;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  outline: 0;
+  font-size: 1.7vmax;
+  padding: 0.5vmax;
+  margin-right: 1vmax;
+  color: #ffffff;
 }
 
 .add-to-cast-btn:hover {
-    background-color: #475e8d;
+  background-color: #475e8d;
 }
 
 /* Other Product slide */
 
 .product-detail-product {
-    color: var(--text-color-primary);
+  color: var(--text-color-primary);
 }
 
 .product-detail-inner {
-    width: auto;
-    white-space: nowrap;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
+  width: auto;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
-
 
 /* Product Cards */
 
 .product-box {
-    width: 25vmax;
-    padding: 1vmin 1vmin;
-    display: inline-block;
-    color: var(--text-color-primary);
-    text-decoration: none;
+  width: 25vmax;
+  padding: 1vmin 1vmin;
+  display: inline-block;
+  color: var(--text-color-primary);
+  text-decoration: none;
 }
 
 .product-box:hover {
-    color: var(--text-color-primary);
-    text-decoration: none;
+  color: var(--text-color-primary);
+  text-decoration: none;
 }
 
 .product-card {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
-.product-card img  {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+.product-card img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .card-body {
-    padding: 2vmin;
+  padding: 2vmin;
 }
 
 .product-card-title {
-    font-size: 1.7vmax;
+  font-size: 1.7vmax;
 }
 
 .product-card-price {
-    margin: 0;
-    font-size: 1.3vmax;
+  margin: 0;
+  font-size: 1.3vmax;
 }
 
 /* All product */
 .product-display-header {
-    padding: 3vmin 2vmin;
-    box-shadow: 0 3px 3px var(--boarder-color);
-    margin-bottom: 4vmin;
-    color: var(--text-color-primary);
+  padding: 3vmin 2vmin;
+  box-shadow: 0 3px 3px var(--boarder-color);
+  margin-bottom: 4vmin;
+  color: var(--text-color-primary);
 }
 
 .product-display-header h3 {
-    font-size: 2vmax;
-    margin-bottom: 3vmin;
+  font-size: 2vmax;
+  margin-bottom: 3vmin;
 }
 
 .product-filter {
-    width: 8vmax;
+  width: 8vmax;
 }
-
 
 @media screen and (max-width: 767px) {
-    .product-detail-page, .product-display-page {
-        height: calc(100vh - 56px);
-    }
+  .product-detail-page,
+  .product-display-page {
+    height: calc(100vh - 56px);
+  }
 }
 
+@media screen and (max-width: 575px) {
+  .product-detail-img {
+    padding: 4vmin 6vmin;
+  }
 
-@media screen and (max-width: 575px) { 
-    .product-detail-img {
-        padding: 4vmin 6vmin;
-    }
+  .product-detail-data {
+    padding: 2vmin 6vmin;
+  }
 
-    .product-detail-data {
-        padding: 2vmin 6vmin;
-    }
-    
-    .product-detail-name {
-        font-size: 2.8vmax;
-    }
-    
-    .product-detail-price {
-        font-size: 1.8vmax;
-    }
-    
-    .product-detail-price span {
-        font-size: 2.3vmax;
-    }
-    
-    .product-detail-desc {
-        font-size: 1.8vmax;
-        font-weight: 300;
-    }
-    
-    .product-detail-color h4 {
-        font-size: 2vmax;
-    }
+  .product-detail-name {
+    font-size: 2.8vmax;
+  }
 
-    .add-to-cast-btn {
-        height: 10vmin;
-        font-size: 2.5vmax;
-    }
+  .product-detail-price {
+    font-size: 1.8vmax;
+  }
 
-    .product-card-title {
-        font-size: 2.1vmax;
-    }
+  .product-detail-price span {
+    font-size: 2.3vmax;
+  }
 
-    .product-card-price {
-        margin: 0;
-        font-size: 1.7vmax;
-    }
+  .product-detail-desc {
+    font-size: 1.8vmax;
+    font-weight: 300;
+  }
+
+  .product-detail-color h4 {
+    font-size: 2vmax;
+  }
+
+  .add-to-cast-btn {
+    height: 10vmin;
+    font-size: 2.5vmax;
+  }
+
+  .product-card-title {
+    font-size: 2.1vmax;
+  }
+
+  .product-card-price {
+    margin: 0;
+    font-size: 1.7vmax;
+  }
 }

@@ -11,9 +11,9 @@ import AdminUpdatePromotion from "./Admin/Promotions/AdminUpdatePromotion";
 import AdminOrders from "./Admin/Orders/AdminOrders";
 import AdminOrdersDetail from "./Admin/Orders/AdminOrderDetail";
 
-import Home from "./Pages/Home/Home";
-import Login from "./Pages/Login";
-import Register from "./Pages/Register";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 // import ProductSlug from "./pages/ProductSlug";
 import { Route, Switch } from "react-router-dom";
 
@@ -24,6 +24,8 @@ import CustomerOrderDetailPage from "./Customer/CustomerOrderDetailPage";
 import Cart from "./Payments/Cart";
 import Checkout from "./Payments/Checkout";
 import Payment from "./Payments/Payment";
+
+import App from "../App";
 
 const Navigation = () => {
   return (
