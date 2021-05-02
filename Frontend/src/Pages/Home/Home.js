@@ -86,7 +86,7 @@ const Home = () => {
                         </h5>
                     </Col>
                     <Col xs={12} md={4} className="home-discover home-pr">
-                        <Link to="/" className="home-discover-box">
+                        <Link to="/promotions" className="home-discover-box">
                             <h5>See more</h5>
                             <div className="discover-arrow">
                                 <RiArrowRightLine />
@@ -100,7 +100,7 @@ const Home = () => {
                     <div className="home-promotion-banner">
                         <h5>Promotion</h5>
                         <h2>15% OFF!!</h2>
-                        <Link to="/" className="home-discover-box">
+                        <Link to="/promotions" className="home-discover-box">
                             <h5>See more</h5>
                             <div className="discover-arrow">
                                 <RiArrowRightLine />

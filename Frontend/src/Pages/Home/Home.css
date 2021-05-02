@@ -253,6 +253,7 @@ span.new-price {
     margin: 0;
 }
 
+
 @media screen and (max-width: 767px) {
     .page-home {
         height: calc(100vh - 56px);
@@ -280,7 +281,6 @@ span.new-price {
         width: 40vmin;
     }
 }
-
 
 
 @media screen and (max-width: 575px) {

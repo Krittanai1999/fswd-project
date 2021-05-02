@@ -29,6 +29,7 @@ import 'swiper/swiper-bundle.css';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
+import Promotions from './Pages/Promotions/Promotions';
 import Products from './Pages/Products/Products';
 import ProductDetail from './Pages/Products/ProductDetail';
 
@@ -149,6 +150,7 @@ function App() {
                             <Nav className="mr-auto">
                                 <Nav.Link href="/login">Login</Nav.Link>
                                 <Nav.Link href="/register">Register</Nav.Link>
+                                <Nav.Link href="/">Shopping cart</Nav.Link>
                                 <NavDropdown title="Catagory" id="basic-nav-dropdown">
                                     {catagoryMenu.map((menu, index) => {
                                         if (index == 0) {
@@ -176,6 +178,9 @@ function App() {
                     </Route>
                     <Route path="/register">
                         <Register />
+                    </Route>
+                    <Route path="/promotions">
+                        <Promotions />
                     </Route>
                     <Route path="/products/:productSlug">
                         <ProductDetail />

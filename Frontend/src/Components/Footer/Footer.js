@@ -36,7 +36,7 @@ const Footer = () => {
                             <h3>About us</h3>
                             <Row>
 
-                                <Col xs={6} sm={3} md={3} className="footer-about-card">
+                                <Col xs={3} sm={3} md={3} className="footer-about-card">
                                     <div className="footer-about-box">
                                         <div className="footer-about-img">
                                             <img
@@ -51,7 +51,7 @@ const Footer = () => {
                                     </div>
                                 </Col>
 
-                                <Col xs={6} sm={3} md={3} className="footer-about-card">
+                                <Col xs={3} sm={3} md={3} className="footer-about-card">
                                     <div className="footer-about-box">
                                         <div className="footer-about-img">
                                             <img
@@ -66,7 +66,7 @@ const Footer = () => {
                                     </div>
                                 </Col>
 
-                                <Col xs={6} sm={3} md={3} className="footer-about-card">
+                                <Col xs={3} sm={3} md={3} className="footer-about-card">
                                     <div className="footer-about-box">
                                         <div className="footer-about-img">
                                             <img
@@ -81,7 +81,7 @@ const Footer = () => {
                                     </div>
                                 </Col>
 
-                                <Col xs={6} sm={3} md={3} className="footer-about-card">
+                                <Col xs={3} sm={3} md={3} className="footer-about-card">
                                     <div className="footer-about-box">
                                         <div className="footer-about-img">
                                             <img

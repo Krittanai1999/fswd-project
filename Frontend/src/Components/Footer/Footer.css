@@ -87,20 +87,33 @@ footer {
     }
 
     .footer-group-info h3 {
-        font-size: 3vmax;
+        font-size: 4.5vmin;
     }
     
     .footer-group-info p {
-        font-size: 2vmax;
+        font-size: 3vmin;
+    }
+
+    .footer-about-box {
+        margin: 2vmin 0;
+        padding: 0;
     }
 
     .footer-about-img {
-        width: 20vmax;
-        height: 20vmax;
+        width: 15vmax;
+        height: 15vmax;    
     }
 
     .footer-about-info h4 {
         font-size: 2.5vmax;
         font-weight: bold;
+    }
+}
+
+
+@media screen and (max-width: 575px) {
+    .footer-about-img {
+        width: 10vmax;
+        height: 10vmax;    
     }
 }

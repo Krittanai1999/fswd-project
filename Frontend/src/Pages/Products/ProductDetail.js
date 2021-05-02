@@ -56,12 +56,12 @@ const ProductDetail = () => {
                             <div className="product-detail-price">
                                 <span>12,345</span> THB
                             </div>
+                            <hr style={{ border: "1px solid #D1BEB0" }} />
                             <div className="product-detail-desc">
                                 Product detail / Size: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                 Nunc commodo pharetra libero in commodo. Suspendisse potenti.
                             </div>
-                            <hr style={{ border: "1px solid #D1BEB0" }} />
-                            <div className="product-detail-color">
+                            {/* <div className="product-detail-color">
                                 <h4>Color</h4>
                                 <ul className="color-selected">
                                     <li className="color-tab"></li>
@@ -69,7 +69,7 @@ const ProductDetail = () => {
                                     <li className="color-tab"></li>
                                     <li className="color-tab"></li>
                                 </ul>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="product-detail-btn">
                             <button className="add-to-cast-btn">
@@ -111,17 +111,10 @@ const ProductDetail = () => {
                                     <Card className="product-card">
                                         <Card.Img variant="top" src={ex_img} />
                                         <Card.Body>
-                                            <Card.Title>{item.name}</Card.Title>
-                                            <Card.Subtitle className="mb-2 text-muted">Size</Card.Subtitle>
-                                            <div className="bottom-card">
-                                                <ul className="color-selected">
-                                                    <li className="color-card"></li>
-                                                    <li className="color-card"></li>
-                                                    <li className="color-card"></li>
-                                                    <li className="color-card"></li>
-                                                </ul>
-                                                <p className="product-price">{commaNumber(item.price)} THB</p>
-                                            </div>
+                                            <Card.Title className="product-card-title">{item.name}</Card.Title>
+                                            <Card.Subtitle className="mb-2 text-muted product-card-price">
+                                                {commaNumber(item.price)} THB
+                                            </Card.Subtitle>
                                         </Card.Body>
                                     </Card>
                                 </Link>

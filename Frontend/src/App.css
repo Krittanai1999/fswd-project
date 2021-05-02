@@ -20,6 +20,7 @@ body {
 
 .Navbar-nav {
     height: 16vh;
+    font-family: 'ABeeZee', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -195,6 +196,17 @@ body {
 
 .dropdown-divider {
     border-top: 1px solid rgba(0,0,0,.15) !important;
+}
+
+/* bs */
+
+.menu_breadcrumb ol {
+    background-color: var(--bg-primary);
+    margin-bottom: 0;
+}
+
+.breadcrumb-item a {
+    color: var(--text-color-primary);
 }
 
 @media screen and (max-width: 767px) {
