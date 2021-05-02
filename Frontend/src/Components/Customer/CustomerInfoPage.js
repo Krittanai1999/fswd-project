@@ -5,6 +5,8 @@ import {Container, Image, Button, Row, Col, Table} from 'react-bootstrap'
 import WebFont from 'webfontloader';
 import Github from "../../img/github.png";
 
+import {Link} from 'react-router-dom';
+
 const CustomerInfoPage = () => {
     useEffect(() => {
         WebFont.load({
@@ -16,7 +18,7 @@ const CustomerInfoPage = () => {
     return(
         <div className="background">
             <Container>
-                <Row className="justify-content-md-center info-box">
+                <Row className="justify-content-md-center">
                     <Col xs lg="5" className="left-column">
                         <div id="border-image">
                           <Image id="customer-picture" src={Github} height="200px" width="200px" roundedCircle/>
@@ -34,7 +36,9 @@ const CustomerInfoPage = () => {
                             Date of Birth :
                         </p>
                         <br/>
-                        <Button id="order-button" variant="default" style={{color: "#EEEEEE", background: "#3C4F76"}}>YOUR ORDERS</Button>
+                        <Link to="/customer/orders">
+                            <Button id="order-button" variant="default" style={{color: "#EEEEEE", background: "#3C4F76"}}>YOUR ORDERS</Button>
+                        </Link>
                     </Col>
                 </Row>
             </Container>

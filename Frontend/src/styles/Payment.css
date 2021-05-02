@@ -1,0 +1,14 @@
+.payment-card {
+    height: 45vh;
+    width: 100%;
+    background-color: #656F88;
+    border-radius: 10px;
+}
+
+.tab-select-payment {
+    height: 10vh;
+    width: 100%;
+    background-color: #FCFBFB;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 2px solid black;
+}

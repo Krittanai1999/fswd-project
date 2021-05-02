@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Image, Button, Row, Col, Table} from 'react-bootstrap'
 import WebFont from 'webfontloader';
 
+import { Link } from 'react-router-dom';
+
 const CustomerOrderDetailPage = () => {
     useEffect(() => {
         WebFont.load({
@@ -24,10 +26,11 @@ const CustomerOrderDetailPage = () => {
                 </div>
                 <h5>Order items list</h5>
                 <div id="products-order-list">
-                    <div className="product-order">
-                        <h6>Order number</h6>
-
-                    </div>
+                    
+                        <div className="product-order">
+                            <h6>Order number 1</h6>
+                        </div>
+                    
                     <div className="product-order">
                         <h6>Order number</h6>
 

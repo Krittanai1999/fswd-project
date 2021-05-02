@@ -14,9 +14,16 @@ import AdminOrdersDetail from "./Admin/Orders/AdminOrderDetail";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
-import CustomerInfoPage from "./Customer/CustomerInfoPage";
 // import ProductSlug from "./pages/ProductSlug";
 import { Route, Switch } from "react-router-dom";
+
+import CustomerInfoPage from "./Customer/CustomerInfoPage";
+import CustomerOrdersPage from "./Customer/CustomerOrdersPage";
+import CustomerOrderDetailPage from "./Customer/CustomerOrderDetailPage";
+
+import Cart from "./Payments/Cart";
+import Checkout from "./Payments/Checkout";
+import Payment from "./Payments/Payment";
 
 const Navigation = () => {
   return (
@@ -30,13 +37,59 @@ const Navigation = () => {
 
         <Route path="/admin" exact={true} component={AdminDashboard} />
         <Route path="/admin/products" exact={true} component={AdminProducts} />
-        <Route path="/admin/products/create" exact={true} component={AdminCreateProducts} />
-        <Route path="/admin/products/:productID" exact={true} component={AdminUpdateProducts} />
-        <Route path="/admin/promotions" exact={true} component={AdminPromotion} />
-        <Route path="/admin/promotion/create" exact={true} component={AdminCreatePromotion} />
-        <Route path="/admin/promotion/:promotionId" exact={true} component={AdminUpdatePromotion} />
+        <Route
+          path="/admin/products/create"
+          exact={true}
+          component={AdminCreateProducts}
+        />
+        <Route
+          path="/admin/products/:productID"
+          exact={true}
+          component={AdminUpdateProducts}
+        />
+        <Route
+          path="/admin/promotions"
+          exact={true}
+          component={AdminPromotion}
+        />
+        <Route
+          path="/admin/promotion/create"
+          exact={true}
+          component={AdminCreatePromotion}
+        />
+        <Route
+          path="/admin/promotion/:promotionId"
+          exact={true}
+          component={AdminUpdatePromotion}
+        />
         <Route path="/admin/orders" exact={true} component={AdminOrders} />
-        <Route path="/admin/order/:orderId" exact={true} component={AdminOrdersDetail} />
+        <Route
+          path="/admin/order/:orderId"
+          exact={true}
+          component={AdminOrdersDetail}
+        />
+        <Route path="/customer">
+          <CustomerInfoPage />
+        </Route>
+
+        <Route path="/customer/orders">
+          <CustomerOrdersPage />
+        </Route>
+
+        <Route path="/customerOderDetail">
+          <CustomerOrderDetailPage />
+        </Route>
+
+        <Route path="/cart">
+          <Cart />
+        </Route>
+
+        <Route path="/checkout">
+          <Checkout />
+        </Route>
+        <Route path="/payment">
+          <Payment />
+        </Route>
       </Switch>
     </React.Fragment>
   );

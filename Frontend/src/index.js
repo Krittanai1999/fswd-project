@@ -8,6 +8,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import { CookiesProvider } from 'react-cookie'
 import { SessionProvider } from './contexts/SessionContext'
 
+
 const client = new ApolloClient({
   uri: 'http://localhost:5001/graphql',
   cache: new InMemoryCache(),
