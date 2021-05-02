@@ -23,7 +23,7 @@ import './Home.css';
 
 import ex_img from '../../img/product-ex.png';
 
-import exProduct from '../exProject.json';
+import exProduct from '../exProduct.json';
 
 const commaNumber = require('comma-number');
 
