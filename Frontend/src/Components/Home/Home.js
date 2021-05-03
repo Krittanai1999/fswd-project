@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { Link } from "react-router-dom";
 import { Button, Carousel, Col, Container, Row } from "react-bootstrap";
+import { NavLink, useLocation, matchPath, Link } from "react-router-dom";
 import {
   Card,
   CardActionArea,
@@ -23,6 +23,10 @@ import App from "../../App";
 import { PRODUCT_QUERY } from "../../graphql/productQuery";
 import { useQuery } from "@apollo/client";
 import { makeStyles } from "@material-ui/core/styles";
+
+import banner1 from "../../img/banner_1.png";
+import banner2 from "../../img/banner_2.png";
+import shoppingcart from "../../img/shopping-cart.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -126,6 +130,11 @@ const Home = () => {
               </Typography> */}
             </CardContent>
           </CardActionArea>
+          <Button component={NavLink} to="/cart">
+            <Link to="cart/">
+              <img src={shoppingcart} width="20vw" />
+            </Link>
+          </Button>
         </Card>
       </Grid>
     ));
@@ -135,7 +144,7 @@ const Home = () => {
     <div className="page-home">
       <App />
       {/* Promotion */}
-      <Carousel className="home-promo">
+      {/* <Carousel className="home-promo">
         <Carousel.Item interval={2000}>
           <img
             className="d-block w-100"
@@ -171,12 +180,17 @@ const Home = () => {
             </p>
           </Carousel.Caption>
         </Carousel.Item>
-      </Carousel>
+      </Carousel> */}
 
       {/* Banner */}
-      <div className="home-banner">
-        <div className="home-banner-box">Banner</div>
-      </div>
+      <Carousel className="home-promo">
+        <Carousel.Item interval={2000}>
+          <img className="d-block w-100" src={banner1} alt="First Banner" />
+        </Carousel.Item>
+        <Carousel.Item interval={2000}>
+          <img className="d-block w-100" src={banner2} alt="Second Banner" />
+        </Carousel.Item>
+      </Carousel>
 
       {/* Lastest Product */}
       <Container fluid className="home-lastest-product">

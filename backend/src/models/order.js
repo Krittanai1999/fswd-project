@@ -6,6 +6,7 @@ const { Schema } = mongoose;
 const StatusType = {
     INCOMPLETE: "INCOMPLETE",
     COMPLETED: "COMPLETED",
+    CANCEL: "CANCEL",
 };
 
 const OrderSchema = new Schema({

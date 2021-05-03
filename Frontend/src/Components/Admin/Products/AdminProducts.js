@@ -94,7 +94,7 @@ const AdminProducts = () => {
           <CardActions>
             <Link
               to={{
-                pathname: `/admin/product/${product.slug}`,
+                pathname: `/admin/product/${product._id}`,
               }}
               style={{ textDecoration: "none" }}
             >

@@ -25,7 +25,7 @@ const ProductSchema = new Schema({
   quantity: { type: String, require: true, index: true },
   price: { type: String, require: true, index: true }, 
   imageUrl: { type: String, require: true, index: true  },
-  tags: { type: Array, require: true, index: true },
+  
   timestamp: { type: Date, default: Date.now },
 });
 

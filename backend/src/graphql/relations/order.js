@@ -1,13 +1,16 @@
-import { OrderTC, ProductTC, PromotionTC, UserTC} from "../../models";
+import  {OrderTC, ProductTC, PromotionTC, UserTC} from "../../models";
 import moment from "moment";
+import { schemaComposer } from "graphql-compose";
+
 
 OrderTC.addRelation("user",{
     resolver: () => UserTC.getResolver("findById"),
     prepareArgs: {
-        _id: (source) => source.userId,
+        _id: (source) => source.userID,
     },
-    projection: {userId: 1}
+    projection: {userID: 1}
 });
+
 
 OrderTC.addRelation("promotion", {
     resolver: () => PromotionTC.getResolver("findById"),
@@ -17,17 +20,27 @@ OrderTC.addRelation("promotion", {
     projection: {promotionID: 1}
 });
 
-OrderTC.addRelation("products", {
+OrderTC.addRelation("product", {
     resolver: () => ProductTC.getResolver("findById"),
-    prepareArgs:{
-        _id:(source) => {
-            const id = []
-            source.productId.map((data) => id.push(data.id))
-            return id
-        },
+    prepareArgs: {
+        _id: (source) => source.productID,
     },
-    projection: {productId: true},
+    projection: { productID: 1 },
 });
+
+
+// OrderTC.addRelation("products", {
+//     resolver: () => ProductTC.getResolver("findById"),
+//     prepareArgs:{
+//         _id:(source) => {
+//             const id = []
+//             source.productId.map((data) => id.push(data.id))
+//             return id
+//         },
+//     },
+//     projection: {productId: true},
+// });
+
 
 OrderTC.addFields({
     timestamp: {

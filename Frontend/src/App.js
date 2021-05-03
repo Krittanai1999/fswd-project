@@ -177,18 +177,18 @@ function App() {
               className={classes.button}
               component={NavLink}
               activeStyle={{ borderBottom: "5px solid #3C4F76" }}
-              to="/product"
+              to="/products"
             >
               Product
             </Button>
-              {/*<Button
+            <Button
               className={classes.button}
               component={NavLink}
-              activeStyle={{ borderBottom: "1px solid #3C4F76" }}
+              activeStyle={{ borderBottom: "5px solid #3C4F76" }}
               to="/promotion"
             >
               Promotion
-            </Button> */}
+            </Button>
           </div>
           <div className={classes.navLinkRight}>{userBox}</div>
         </Toolbar>
