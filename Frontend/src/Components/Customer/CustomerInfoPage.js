@@ -23,17 +23,17 @@ const CustomerInfoPage = () => {
                         <div id="border-image">
                           <Image id="customer-picture" src={Github} height="200px" width="200px" roundedCircle/>
                         </div>
-                        <h2>username</h2>
+                        <h2>memory</h2>
                     </Col>
                     <Col xs lg="7" className="right-column">
                         <h2>Info</h2>
                         <br/>
                         <p>First name : Kittiwat &nbsp; Last name : Eamkijkarn</p>
                         <p>
-                            Address : <br/>
-                            Phone Number : <br/>
-                            Email :<br/>
-                            Date of Birth :
+                            Address : -<br/>
+                            Phone Number : 0889992299<br/>
+                            Email : memory@gmail.com<br/>
+                            Date of Birth : 20/03/2000
                         </p>
                         <br/>
                         <Link to="/customer/orders">

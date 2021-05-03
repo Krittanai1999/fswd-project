@@ -25,28 +25,41 @@ const CustomerOrdersPage = () => {
                 <div id="order-list">
                     
                     <div className="order-item">
-                        <h6>Order number</h6>
+                        <h6>Order id : #23324</h6>
+                        <p>order date : 3/04/2021</p>
                         <Link to="/customerOderDetail">
-                            <Button id="order-button" variant="default" style={{color: "#EEEEEE", background: "#3C4F76"}}>YOUR ORDERS</Button>
+                            <Button id="order-button" variant="default" style={{color: "#EEEEEE", background: "#3C4F76", display: "inline-block", float: "right"}}>SEE MORE DETAIL >></Button>
                         </Link>
                     </div>
-                    
                     <div className="order-item">
-                        <h6>Order number</h6>
-
+                        <h6>Order id : #23324</h6>
+                        <p>order date : 3/04/2021</p>
+                        <Link to="/customerOderDetail">
+                            <Button id="order-button" variant="default" style={{color: "#EEEEEE", background: "#3C4F76", display: "inline-block", float: "right"}}>SEE MORE DETAIL >></Button>
+                        </Link>
                     </div>
                     <div className="order-item">
-                        <h6>Order number</h6>
-
+                        <h6>Order id : #23324</h6>
+                        <p>order date : 3/04/2021</p>
+                        <Link to="/customerOderDetail">
+                            <Button id="order-button" variant="default" style={{color: "#EEEEEE", background: "#3C4F76", display: "inline-block", float: "right"}}>SEE MORE DETAIL >></Button>
+                        </Link>
                     </div>
                     <div className="order-item">
-                        <h6>Order number</h6>
-
+                        <h6>Order id : #23324</h6>
+                        <p>order date : 3/04/2021</p>
+                        <Link to="/customerOderDetail">
+                            <Button id="order-button" variant="default" style={{color: "#EEEEEE", background: "#3C4F76", display: "inline-block", float: "right"}}>SEE MORE DETAIL >></Button>
+                        </Link>
                     </div>
                     <div className="order-item">
-                        <h6>Order number</h6>
-
+                        <h6>Order id : #23324</h6>
+                        <p>order date : 3/04/2021</p>
+                        <Link to="/customerOderDetail">
+                            <Button id="order-button" variant="default" style={{color: "#EEEEEE", background: "#3C4F76", display: "inline-block", float: "right"}}>SEE MORE DETAIL >></Button>
+                        </Link>
                     </div>
+
                 </div>
             </Container>
         </div>

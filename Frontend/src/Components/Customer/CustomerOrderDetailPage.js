@@ -22,7 +22,9 @@ const CustomerOrderDetailPage = () => {
                 </div>
                 <h5>Order Status</h5>
                 <div id="order-status">
-                    
+                    <p>shipping status : incompleted</p>
+                    <p>start date : 3/04/2021</p>
+                    <p>finished date: -</p>
                 </div>
                 <h5>Order items list</h5>
                 <div id="products-order-list">
