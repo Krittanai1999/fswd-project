@@ -5,10 +5,16 @@ import {Container, Image, Button, Row, Col, Table} from 'react-bootstrap'
 import WebFont from 'webfontloader';
 import Github from "../../img/github.png";
 
+import { PRODUCT_QUERY } from "../../graphql/productQuery";
+import { ME_QUERY } from "../../graphql/meQuery";
+import { useQuery } from "@apollo/client";
+
 import {Link} from 'react-router-dom';
 
 const Cart = () => {
-    const [cartList, setCartList] = useState([1,1,1,1,1,1])
+    const { data } = useQuery(PRODUCT_QUERY);
+    const { user } = useQuery(ME_QUERY);
+    const [cartList, setCartList] = useState([["table","2 piece"],["chair", "2 piece"],["bed", "1 piece"]])
     const [countItem, setCountItem] = useState(cartList.length)
 
     useEffect(() => {
@@ -29,10 +35,11 @@ const Cart = () => {
                         </div>
                         <hr className="underline"></hr>
                         <div id="cart-order-list" className="scale-up-ver-top">
-                            {cartList.map((list) => {
+                            { cartList.map((list) => {
                                 return(
                                     <div className="cart-list-cell slide-bck-bottom ">
-                                        <h6>Order number 1</h6>
+                                        <h6>{list[0]}</h6>
+                                        <p>{list[1]}</p>
                                     </div>
                                 )
                             })}
@@ -43,7 +50,6 @@ const Cart = () => {
                             <h3>Order Summary</h3>
                             <hr className="underline"></hr>
                             <div id="summaryContent">
-
                             </div>
                             <hr className="underline"></hr>
                             <div id="totalCost">
