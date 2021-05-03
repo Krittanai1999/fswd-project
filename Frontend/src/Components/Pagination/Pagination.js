@@ -2,17 +2,17 @@ import React from "react";
 import { Pagination } from "react-bootstrap";
 
 // CSS
-import "../conponent.css";
+import '../component.css';
 
-const Cards = ({
-  postsPerPage,
-  totalPosts,
-  paginate,
-  nextPage,
-  prevPage,
-  currentPage,
-}) => {
-  const pageNumbers = [];
+const PaginationBtn = ({ 
+    postsPerPage, 
+    totalPosts, 
+    paginate, 
+    nextPage, 
+    prevPage, 
+    currentPage 
+    }) => {
+    const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
@@ -46,4 +46,4 @@ const Cards = ({
   );
 };
 
-export default Cards;
+export default PaginationBtn;

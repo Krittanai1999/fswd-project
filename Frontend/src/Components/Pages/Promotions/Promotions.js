@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Breadcrumb, Col, Container, Row } from "react-bootstrap";
 
-import Footer from "../../Footer/Footer";
+import Footer from '../../Footer/Footer';
 
 // icon
 

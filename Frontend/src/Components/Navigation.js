@@ -11,9 +11,12 @@ import AdminUpdatePromotion from "./Admin/Promotions/AdminUpdatePromotion";
 import AdminOrders from "./Admin/Orders/AdminOrders";
 import AdminOrdersDetail from "./Admin/Orders/AdminOrderDetail";
 
-import Home from "./pages/Home/Home";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Home from "./Pages/Home/Home";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
+import Products from './Pages/Products/Products';
+import ProductsDetail from './Pages/Products/ProductDetail';
+import Promotion from './Pages/Promotions/Promotions';
 // import ProductSlug from "./pages/ProductSlug";
 import { Route, Switch } from "react-router-dom";
 
@@ -35,6 +38,9 @@ const Navigation = () => {
         <Route path="/register" exact={true} component={Register} />
         <Route path="/login" exact={true} component={Login} />
         <Route path="/customer" exact={true} component={CustomerInfoPage} />
+        <Route path="/products" exact={true} component={Products} />
+        <Route path="/products/:productSlug" exact={true} component={ProductsDetail} />
+        <Route path="/promotions" exact={true} component={Promotion} />
         {/* <Route path="/product/:slug" exact={true} component={ProductSlug} /> */}
 
         <Route path="/admin" exact={true} component={AdminDashboard} />

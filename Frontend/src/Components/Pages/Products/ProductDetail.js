@@ -2,17 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Card, Col, Container, Row } from "react-bootstrap";
 
-import Footer from "../../Footer/Footer";
+import Footer from '../../Footer/Footer';
 
 // icon
 import { IoCartOutline } from "react-icons/io5";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 // CSS
-import "./Product.css";
+import './Product.css';
 
-// img
-import ex_img from "../../../img/product-ex.png";
+// image
+import ex_img from '../../../img/product-ex.png';
 
 import exProduct from "../exProduct.json";
 

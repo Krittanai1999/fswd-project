@@ -1,4 +1,4 @@
-@import url("../../../App.css");
+@import '../../../App.css';
 
 .promotion-page {
   background-color: var(--bg-primary);

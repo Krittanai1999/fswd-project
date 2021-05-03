@@ -16,14 +16,22 @@ import { IoCartOutline } from "react-icons/io5";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import "swiper/swiper-bundle.css";
+import Navigation from './Components/Navigation';
 
-import Home from "./Components/pages/Home/Home";
-import Login from "./Components/pages/Login";
-import Register from "./Components/pages/Register";
-import Promotions from "./Components/pages/Promotions/Promotions";
-import Products from "./Components/pages/Products/Products";
-import ProductDetail from "./Components/pages/Products/ProductDetail";
+// import Home from './Components/Pages/Home/Home';
+// import Login from './Components/Pages/Login';
+// import Register from './Components/Pages/Register';
+// import Promotions from './Components/Pages/Promotions/Promotions';
+// import Products from './Components/Pages/Products/Products';
+// import ProductDetail from './Components/Pages/Products/ProductDetail';
+
+// import CustomerInfoPage from "./Components/Customer/CustomerInfoPage";
+// import CustomerOrdersPage from "./Components/Customer/CustomerOrdersPage";
+// import CustomerOrderDetailPage from "./Components/Customer/CustomerOrderDetailPage";
+
+// import Cart from "./Components/Payments/Cart";
+// import Checkout from "./Components/Payments/Checkout";
+// import Payment from "./Components/Payments/Payment";
 
 const catagoryMenu = [
   // BEDROOM, BATHROOM, KITCHEN, LIVINGROOM, OTHER
@@ -55,88 +63,105 @@ const catagoryMenu = [
 ];
 
 function App() {
+
   return (
     <>
-      <nav className="Navbar-nav">
-        {/* Nav >= 768 */}
-        <div className="header-top navWide">
-          <div className="header-top-container">
-            <div className="logo-box">
-              <Link to="/" className="logo-img">
-                <img src={logo} alt="" height="100%" />
-              </Link>
-            </div>
-
-            <div className="search-box">
-              <div className="search-field">
-                <input
-                  type="search"
-                  className="search-input"
-                  placeholder="Seach for products.."
-                />
-              </div>
-            </div>
-
-            <div className="header-icon-box">
-              <Link
-                to="/"
-                title="shopping cart"
-                className="header-shopping-cart-box"
-              >
-                <IoCartOutline />
-              </Link>
-              <div className="header-user-icon">
-                <FaRegUser />
-              </div>
-              <div className="header-user-login">
-                <Link to="/login" className="user-list">
-                  <h5>Login</h5>
-                </Link>
-                <span>|</span>
-                <Link to="/register" className="user-list">
-                  <h5>Register</h5>
+      <Router>
+        <nav className="Navbar-nav">
+          {/* Nav >= 768 */}
+          <div className="header-top navWide">
+            <div className="header-top-container">
+              <div className="logo-box">
+                <Link to="/" className="logo-img">
+                  <img src={logo} alt="" height="100%" />
                 </Link>
               </div>
+
+              {/* <div className="search-box">
+                                <div className="search-field">
+                                    <input type="search" className="search-input" placeholder="Seach for products.." />
+                                </div>
+                            </div> */}
+
+              <div className="header-icon-box">
+                <Link to="/cart" title="shopping cart" className="header-shopping-cart-box">
+                  <IoCartOutline />
+                </Link>
+                <div className="header-user-icon">
+                  <FaRegUser />
+                </div>
+                <div className="header-user-login">
+                  <Link to="/login" className="user-list">
+                    <h5>Login</h5>
+                  </Link>
+                  <span>|</span>
+                  <Link to="/register" className="user-list">
+                    <h5>Register</h5>
+                  </Link>
+                </div>
+              </div>
+
             </div>
           </div>
-        </div>
 
-        <div className="header-menu navWide">
-          <ul className="header-menu-container">
-            {catagoryMenu.map((menu) => {
-              return (
-                <Link to={"/" + menu.path} className="catagory-menu">
-                  <li>{menu.name}</li>
-                </Link>
-              );
-            })}
-          </ul>
-        </div>
+          <div className="header-menu navWide">
+            <ul className="header-menu-container">
+              {catagoryMenu.map(menu => {
+                return (
+                  <Link to={'/products/' + menu.path} className="catagory-menu">
+                    <li>{menu.name}</li>
+                  </Link>
+                )
+              })}
+            </ul>
+          </div>
 
-        {/* Nav < 768 */}
-        <Navbar expand="lg" className="navNarrow">
-          <Navbar.Brand href="/" style={{ width: "40px", height: "40px" }}>
-            <img src={logo} alt="" height="100%" />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="/login">Login</Nav.Link>
-              <Nav.Link href="/register">Register</Nav.Link>
-              <Nav.Link href="/">Shopping cart</Nav.Link>
-              <NavDropdown title="Catagory" id="basic-nav-dropdown">
-                {catagoryMenu.map((menu, index) => {
-                  return (
-                    <NavDropdown.Item href={"/" + menu.path}>
-                      {menu.name}
-                    </NavDropdown.Item>
-                  );
-                })}
-              </NavDropdown>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-      </nav>
+          {/* Nav < 768 */}
+          <Navbar expand="lg" className="navNarrow">
+            <Navbar.Brand href="/" style={{ width: '40px', height: '40px' }}>
+              <img src={logo} alt="" height="100%" />
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="mr-auto">
+                <Nav.Link href="/login">Login</Nav.Link>
+                <Nav.Link href="/register">Register</Nav.Link>
+                <Nav.Link href="/cart">Shopping cart</Nav.Link>
+                <NavDropdown title="Catagory" id="basic-nav-dropdown">
+                  {catagoryMenu.map((menu) => {
+                    return (
+                      <NavDropdown.Item href={'/products/' + menu.path}>{menu.name}</NavDropdown.Item>
+                    )
+                  })}
+                </NavDropdown>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+        </nav>
+
+        <Navigation />
+
+        {/* <Switch>
+                    <Route path="/login">
+                        <Login />
+                    </Route>
+                    <Route path="/register">
+                        <Register />
+                    </Route>
+                    <Route path="/promotions">
+                        <Promotions />
+                    </Route>
+                    <Route path="/products/:productSlug">
+                        <ProductDetail />
+                    </Route>
+                    <Route path="/products">
+                        <Products />
+                    </Route>
+                    <Route path="/">
+                        <Home />
+                    </Route>
+                </Switch> */}
+      </Router>
     </>
   );
 }
