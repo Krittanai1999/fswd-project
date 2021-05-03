@@ -271,10 +271,6 @@ const Home = () => {
             src={banner1}
             alt="First Banner"
           />
-          {/* <Carousel.Caption className="home-banner-caption">
-                        <h3>First Banner</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption> */}
         </Carousel.Item>
         <Carousel.Item interval={2000}>
           <img

@@ -77,11 +77,11 @@ function App() {
                 </Link>
               </div>
 
-              {/* <div className="search-box">
-                                <div className="search-field">
-                                    <input type="search" className="search-input" placeholder="Seach for products.." />
-                                </div>
-                            </div> */}
+              <div className="search-box">
+                <div className="search-field">
+                  <input type="search" className="search-input" placeholder="Seach for products.." />
+                </div>
+              </div>
 
               <div className="header-icon-box">
                 <Link to="/cart" title="shopping cart" className="header-shopping-cart-box">
